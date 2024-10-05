@@ -1,0 +1,12 @@
+@import "color";
+
+// start other
+.nuxt-devtools-hide {
+    display: none;
+}
+// end other
+// start navbar
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+// end navbar

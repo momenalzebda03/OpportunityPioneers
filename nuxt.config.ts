@@ -1,15 +1,17 @@
-export default ({
+export default {
   css: [
-    "@/assets/scss/main.scss",
     "@fortawesome/fontawesome-free/css/all.css",
-    "bootstrap/dist/css/bootstrap.css",
+    "/assets/scss/main.scss",
+      "bootstrap/dist/css/bootstrap.css",
   ],
   app: {
     head: {
-      title: "TRELLO",
+      title: "OPPORTUNITYPLONEERS",
+
       link: [
         {
           rel: "icon",
+          href: "http://localhost:3000/_nuxt/assets/images/OpportunityPioneers.png",
         },
       ],
       script: [
@@ -20,4 +22,9 @@ export default ({
     },
   },
   devtools: { enabled: true },
-});
+  vite: {
+    define: {
+      "process.env.DEBUG": false,
+    },
+  },
+};
