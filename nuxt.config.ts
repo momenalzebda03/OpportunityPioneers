@@ -19,5 +19,5 @@ export default {
       ],
     },
   },
-  devtools: { enabled: true },
+  // devtools: { enabled: true },
 };
