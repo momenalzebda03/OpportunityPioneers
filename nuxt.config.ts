@@ -1,4 +1,4 @@
-export default {
+export default ({
   css: [
     "@/assets/scss/main.scss",
     "@fortawesome/fontawesome-free/css/all.css",
@@ -19,5 +19,5 @@ export default {
       ],
     },
   },
-  // devtools: { enabled: true },
-};
+  devtools: { enabled: true },
+});
