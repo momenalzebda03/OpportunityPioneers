@@ -12,19 +12,19 @@
                 <div class="mt-4">
                     <div class="container">
                         <div class="row rowGapColumn">
-                            <ul class="col-md-6 col-lg-4" v-for="(listCard, index) in listCard" :key="listCard">
-                                <li class="d-flex flex-column rounded-2 gap-2 divCard p-3"
-                                    :class="{ 'active': listCard.activeComponent }" @click="toggleActiveState(index)">
+                            <ul class="col-md-6 col-lg-4" v-for="(item, index) in listCard" :key="index">
+                                <li class="d-flex flex-column rounded-2 gap-2 divCard h-100 p-2"
+                                    :class="{ 'active': item.activeComponent }" @click="toggleActiveState(index)">
                                     <div class="divPoint position-relative rounded-circle"></div>
                                     <div class="text-center fw-bold divBoxImage">
-                                        <img :src="listCard.srcImage" alt="">
-                                        <p class="pt-3">{{ listCard.titleNavbar }}</p>
+                                        <img :src="item.srcImage" alt="">
+                                        <p class="pt-3">{{ item.titleNavbar }}</p>
                                     </div>
                                 </li>
                             </ul>
                             <div class="d-flex justify-content-end mt-3">
-                                <router-link @click=" routerLinkButton(element)" to="/"
-                                    class="border ButtonContinue rounded-1">
+                                <router-link :to="getRouterLink()" class="border ButtonContinue rounded-1"
+                                    :class="{ 'hoverable': listCard.some(item => item.activeComponent) }">
                                     <span class="fw-bold spanContinue">Continue</span>
                                 </router-link>
                             </div>
@@ -43,26 +43,24 @@ import { ref, onMounted } from 'vue';
 const isClient = ref(false);
 
 const listCard = ref([
-    { titleNavbar: "Job Seeker", srcImage: "http://localhost:3000/_nuxt/assets/images/job.png?t=1728137159158", activeComponent: true, url: "SignUpJobSeeker" },
-    { titleNavbar: "Employer", srcImage: "http://localhost:3000/_nuxt/assets/images/employeer.png?t=1728137159158", activeComponent: false, url: "/test1" },
-    { titleNavbar: "Supporting Initiative", srcImage: "http://localhost:3000/_nuxt/assets/images/hart.png?t=1728137159158", activeComponent: false, url: "/test2" }
-])
+    { titleNavbar: "Job Seeker", srcImage: "http://localhost:3000/_nuxt/assets/images/job.png?t=1728137159158", activeComponent: false },
+    { titleNavbar: "Employer", srcImage: "http://localhost:3000/_nuxt/assets/images/employeer.png?t=1728137159158", activeComponent: false },
+    { titleNavbar: "Supporting Initiative", srcImage: "http://localhost:3000/_nuxt/assets/images/hart.png?t=1728137159158", activeComponent: false }
+]);
 
-const routerLinkButton = (element) => {
-    listCard.value.forEach((element, idActive) => {
-        const elementActive = element.activeComponent == true;
-        console.log(idActive == true);
-        // console.log(elementActive);
-        // if (element.activeComponent == 0) {
-        //     // const url =
-        //     console.log("SignUpJobSeeker");
-        // } else if (element.activeComponent == 1) {
-        //     console.log(element.url);
-        // } else {
-        //     console.log(element.url);
-        // }
-    });
-}
+const getRouterLink = () => {
+    const urlMap = [
+        "/SignUpJobSeeker",
+        "/test1",
+        "/test2"
+    ];
+    const activeElement = listCard.value.find(element => element.activeComponent);
+    if (activeElement) {
+        const idActive = listCard.value.indexOf(activeElement);
+        return urlMap[idActive] || '/';
+    }
+    return '/';
+};
 
 onMounted(() => {
     isClient.value = true;
@@ -72,13 +70,6 @@ const toggleActiveState = (index) => {
     listCard.value.forEach((checkList, idx) => {
         checkList.activeComponent = idx === index;
     });
-
-    // if (index == 0) {
-    //     console.log("hello world index 0");
-    // } else if (index == 1) {
-    //     console.log("hello world index 1");
-    // } else {
-    //     console.log("hello world index 2");
-    // }
 };
+
 </script>

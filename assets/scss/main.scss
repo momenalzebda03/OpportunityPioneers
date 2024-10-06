@@ -7,7 +7,7 @@
 
 // end other
 // start navbar
-nav {
+body nav {
     z-index: 1;
 }
 
@@ -18,41 +18,41 @@ nav {
 // end navbar
 
 // start HayThere
-.divHayPerint {
-    width: 808px;
-}
-
-.divHayThere {
+body .divHayThere {
     height: 100vh;
 }
 
-.hChild {
+body .divHayThere div .divHayPerint {
+    width: 808px;
+}
+
+body .divHayThere div .divHayPerint div .hChild {
     color: $colorGray;
 }
 
-.divPoint {
+body .divHayThere div .divHayPerint div div .rowGapColumn ul .divCard .divPoint {
     width: 20px;
     height: 20px;
     border: 2px solid #ccc;
 }
 
-.divCard {
+body .divHayThere div .divHayPerint div div .rowGapColumn ul .divCard {
     cursor: pointer;
     border: 1px solid $colorPointd;
 }
 
-.divBoxImage {
+body .divHayThere div .divHayPerint div div .rowGapColumn ul .divCard .divBoxImage {
     img {
         width: 40px;
     }
 }
 
-.active {
+body .divHayThere div .divHayPerint div div .rowGapColumn ul .active {
     cursor: pointer;
 
     .divBoxImage {
         img {
-            filter: grayscale(200%) brightness(200%);
+            filter: grayscale(100%) brightness(150%) sepia(100%) hue-rotate(90deg) saturate(500%);
         }
     }
 
@@ -88,7 +88,7 @@ nav {
     background-color: $colorCard;
 }
 
-.ButtonContinue {
+body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue {
     text-decoration: none;
     background-color: $colorGrayButton;
     padding: 13px 25px;
@@ -98,11 +98,11 @@ nav {
     }
 }
 
-.ButtonContinue:hover {
-    background-color: $colorGreen;
+body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue.hoverable {
+    background-color: $colorGreen !important;
 
     span {
-        color: $colorWhite;
+        color: $colorWhite !important;
     }
 }
 
@@ -110,11 +110,11 @@ nav {
 
 // start media
 @media (max-width: 990px) {
-    .rowGapColumn {
+    body .divHayThere div .divHayPerint div div .rowGapColumn {
         row-gap: 20px;
     }
 
-    .imageLoginWidth {
+    body nav .imageLoginWidth {
         width: 50px;
     }
 }
