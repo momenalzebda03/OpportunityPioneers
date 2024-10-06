@@ -2,11 +2,121 @@
 
 // start other
 .nuxt-devtools-hide {
-    display: none;
+    display: none !important;
 }
+
 // end other
 // start navbar
+nav {
+    z-index: 1;
+}
+
 .navbar-toggler:focus {
     box-shadow: none !important;
 }
+
 // end navbar
+
+// start HayThere
+.divHayPerint {
+    width: 808px;
+}
+
+.divHayThere {
+    height: 100vh;
+}
+
+.hChild {
+    color: $colorGray;
+}
+
+.divPoint {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+}
+
+.divCard {
+    cursor: pointer;
+    border: 1px solid $colorPointd;
+}
+
+.divBoxImage {
+    img {
+        width: 40px;
+    }
+}
+
+.active {
+    cursor: pointer;
+
+    .divBoxImage {
+        img {
+            filter: grayscale(200%) brightness(200%);
+        }
+    }
+
+    border: 0px solid $colorPointd;
+
+    p {
+        font-size: 17px;
+        color: $colorGreenPoint;
+    }
+
+    .divPoint::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background-color: $colorGreen;
+        border-radius: 50%;
+    }
+
+    .divPoint::before {
+        content: "";
+        position: absolute;
+        left: -6.5px;
+        top: -6.5px;
+        width: 33px;
+        height: 33px;
+        background-color: $colorWhite;
+        border-radius: 50%;
+    }
+
+    background-color: $colorCard;
+}
+
+.ButtonContinue {
+    text-decoration: none;
+    background-color: $colorGrayButton;
+    padding: 13px 25px;
+
+    .spanContinue {
+        color: $colorButton;
+    }
+}
+
+.ButtonContinue:hover {
+    background-color: $colorGreen;
+
+    span {
+        color: $colorWhite;
+    }
+}
+
+// end HayThere
+
+// start media
+@media (max-width: 990px) {
+    .rowGapColumn {
+        row-gap: 20px;
+    }
+
+    .imageLoginWidth {
+        width: 50px;
+    }
+}
+
+// end media
