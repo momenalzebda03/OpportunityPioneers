@@ -77,6 +77,7 @@ body nav {
 // end navbar User Profile
 // start HayThere
 body .divHayThere {
+    padding-top: 120px !important;
     height: 100vh;
 }
 
@@ -227,11 +228,26 @@ body div form div .rowChild div div div .inputPaddingOverflow::placeholder {
 }
 
 body div form div .rowChild div div div .selectWaths {
-    top: 2px;
-    left: 5px;
+    top: 3px;
+    left: 2px;
     border: transparent;
     border-right: 2px solid $colorPointLast;
-    height: 90%;
+    height: 89%;
+    z-index: 1;
+
+    li {
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+summary {
+    list-style: none;
+}
+
+.selectWaths li {
+    list-style: none;
 }
 
 // end SignUp
@@ -251,6 +267,7 @@ body div form div .inputWidthEmail::placeholder {
 }
 
 body div form div .inputWidthEmailTrue {
+    color: $colorGreen;
     border: 2px solid $colorGreen;
 }
 
@@ -259,7 +276,8 @@ body div form div .inputWidthEmailTrue::placeholder {
 }
 
 body div form div .inputWidthEmailFalse {
-    border: 2px solid $colorRed;
+    color: $colorRed !important;
+    border: 2px solid $colorRed !important;
 }
 
 body div form div .inputWidthEmailFalse::placeholder {
@@ -270,7 +288,7 @@ body div form div .inputWidthEmailFalse::placeholder {
 // start media
 @media (max-width: 990px) {
     body .divHayThere {
-        padding-top: 80px;
+        padding-top: 80px !important;
     }
 
     body .divHayThere div .divHayPerint div div .rowGapColumn {

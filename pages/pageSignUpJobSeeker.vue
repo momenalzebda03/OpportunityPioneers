@@ -1,5 +1,5 @@
 <template>
-    <!-- start   -->
+    <!-- start signUpSeeker  -->
     <componentCenter style="padding-top: 220px !important;">
         <div class="container">
             <router-link to="/">
@@ -40,11 +40,16 @@
                                     <input type="text" placeholder="(+970)"
                                         class="w-100 inputPadding rounded-3 p-2 border border-2" v-model="inputGange1" />
                                     <span v-if="containsAcshen1"></span>
-                                    <select v-else-if="!inputGange1" class="position-absolute selectWaths">
-                                        <option><img src="/assets/images/palisten.png" alt="" /></option>
-                                        <option>1</option>
-                                        <option>1</option>
-                                    </select>
+                                    <details v-else-if="!inputGange1" class="position-absolute selectWaths py-1 px-1">
+                                        <summary>
+                                            <img src='/assets/images/palisten.png' alt="" />
+                                        </summary>
+                                        <div class="bg-white">
+                                            <li v-for="option in options" :key="option">
+                                                <img :src="option.image" alt="">
+                                            </li>
+                                        </div>
+                                    </details>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +105,11 @@ import componentCenter from "/components/componentCenter/componentCenter";
 import ComponentCenterText from "/components/componentCenter/textComponent";
 import ComponentLast from "/components/componentCenter/componentLast";
 import { ref, computed } from 'vue';
+
+const options = ref([
+    { value: '1', image: 'http://localhost:3000/_nuxt/assets/images/palisten.png' },
+    { value: '2', image: 'http://localhost:3000/_nuxt/assets/images/arrow.png' }
+])
 
 const inputGange = ref('');
 const inputGange1 = ref('');

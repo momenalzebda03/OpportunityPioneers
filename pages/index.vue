@@ -26,7 +26,6 @@
         </div>
     </componentCenter>
     <!-- page HayThere -->
-    <div v-if="isClient"></div>
 </template>
   
 <script setup>
