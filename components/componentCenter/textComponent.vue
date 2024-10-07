@@ -1,13 +1,8 @@
 <template>
-    <div>
-        <div class="text-center d-flex flex-column gap-2" v-if="currentRoute === '/'">
-            <h1 class="fs-3 fw-bold">Hey there, What brings you here today?</h1>
-            <h2 class="fs-6 hChild">Please choose the option that best describes you to proceed with the sign-up process.
-            </h2>
-        </div>
-        <div class="text-center d-flex flex-column gap-2" v-if="currentRoute === '/SignUpJobSeeker'">
-            <h1 class="fs-3 fw-bold">Sign up as Job Seeker</h1>
-            <h2 class="fs-6 hChild">Please enter the information below to continue the registration process</h2>
+    <div v-for="item in  ApiText " :key="index">
+        <div class="text-center d-flex flex-column gap-2" v-if="currentRoute == item.url">
+            <h1 class="fs-3 fw-bold">{{ item.title }}</h1>
+            <h2 class="fs-6 hChild">{{ item.text }}</h2>
         </div>
     </div>
 </template>
@@ -15,14 +10,15 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
-
-// Get the current route
 const route = useRoute();
-
-// Create a computed property for the current path
 const currentRoute = computed(() => route.path);
-</script>
 
-<style scoped>
-/* Add your styles here */
-</style>
+const ApiText = ([
+    { url: "/", title: "Hey there, What brings you here today?", text: "Please choose the option that best describes you to proceed with the sign-up process." },
+    { url: "/pageSignUpJobSeeker", title: "Sign up as Job Seeker", text: "Please choose the option that best describes you to proceed with the sign-up process." },
+    { url: "/pageSignUpSupportingInitiative", title: "Sign up as Supporting Initiative", text: "Please choose the option that best describes you to proceed with the sign-up process." },
+    { url: "/pageSignUpEmployee", title: "Sign up as Employer", text: "Please choose the option that best describes you to proceed with the sign-up process." },
+    { url: "/PageEmailAddressVerification", title: "Email Address Verification", text: "We have sent a verification code to your email address. Please enter the code in the box below to verify your email." },
+    { url: "/PageVerifyYourPhoneNumber", title: "Verify Your Phone Number", text: "We have sent a verification code to your phone number via SMS. Please enter the code in the box below to verify your phone number." },
+])
+</script>

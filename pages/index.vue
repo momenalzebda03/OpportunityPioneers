@@ -43,9 +43,9 @@ const listCard = ref([
 
 const getRouterLink = () => {
     const urlMap = [
-        "/SignUpJobSeeker",
-        "/test1",
-        "/test2"
+        "/pageSignUpJobSeeker",
+        "/pageSignUpEmployee",
+        "/pageSignUpSupportingInitiative"
     ];
     const activeElement = listCard.value.find(element => element.activeComponent);
     if (activeElement) {

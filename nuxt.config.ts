@@ -1,9 +1,5 @@
 export default {
-  css: [
-    "@fortawesome/fontawesome-free/css/all.css",
-    "/assets/scss/main.scss",
-      "bootstrap/dist/css/bootstrap.css",
-  ],
+  css: ["/assets/scss/main.scss", "bootstrap/dist/css/bootstrap.css"],
   app: {
     head: {
       title: "OPPORTUNITYPLONEERS",

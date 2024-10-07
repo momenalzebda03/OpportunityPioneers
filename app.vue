@@ -1,8 +1,15 @@
 <template>
-  <ComponentNavbar />
+  <ComponentNavbarSignUp v-if="currentRoute != '/userProfile'" />
+  <ComponentNavbarUserProfile v-if="currentRoute == '/userProfile'" />
   <router-view />
 </template>
 
 <script setup>
-import ComponentNavbar from "@/components/folderHeader/Navbar.vue";
+import ComponentNavbarSignUp from "@/components/folderHeader/NavbarSignUp";
+import ComponentNavbarUserProfile from "@/components/folderHeader/NavbaruserProfile";
+
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
+const route = useRoute();
+const currentRoute = computed(() => route.path);
 </script>

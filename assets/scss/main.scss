@@ -16,18 +16,65 @@ ul {
     border-radius: 50%;
 }
 
+.ButtonContinue {
+    text-decoration: none;
+    background-color: $colorGrayButton;
+    padding: 13px 25px;
+
+    .spanContinue {
+        color: $colorButton;
+    }
+}
+
+.ButtonContinue.hoverable {
+    background-color: $colorGreen !important;
+
+    span {
+        color: $colorWhite !important;
+    }
+}
+
+.ButtonContinue:hover {
+    background-color: $colorGreen !important;
+
+    span {
+        color: $colorWhite !important;
+    }
+}
+
+.inputPadding::placeholder {
+    padding-left: 27px;
+}
+
 // end other
-// start navbar
+// start navbar Sign Up
 body nav {
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-toggler:focus {
     box-shadow: none !important;
 }
 
-// end navbar
+// end navbar Sign Up
 
+// start navbar User Profile
+.lineNone {
+    color: $colorBlack;
+    text-decoration: none;
+}
+
+.lineNone:hover {
+    color: $colorBlue;
+    text-decoration: underline;
+}
+
+.imageSearch {
+    top: 10px;
+    left: 22px;
+}
+
+// end navbar User Profile
 // start HayThere
 body .divHayThere {
     height: 100vh;
@@ -100,40 +147,32 @@ body .divHayThere div .divHayPerint div div .rowGapColumn ul .active {
     background-color: $colorCard;
 }
 
-body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue {
-    text-decoration: none;
-    background-color: $colorGrayButton;
-    padding: 13px 25px;
-
-    .spanContinue {
-        color: $colorButton;
-    }
-}
-
-body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue.hoverable {
-    background-color: $colorGreen !important;
-
-    span {
-        color: $colorWhite !important;
-    }
-}
-
 // end HayThere
 // start SignUp
-.lineLast {
+body ul .lineLast {
     height: 10px;
     background-color: $colorLast;
 }
 
-.lineLast.active {
-    background-color: $colorPointd;
+body ul .lineLast.activeEmail.active {
+    background-color: $colorGreen;
 }
 
-.lineLast.active::before {
+body ul li.activeEmail.active::after {
+    content: url('/assets/images/checkTrue.png') !important;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -4px;
+    left: -19px;
+    z-index: 1;
+}
+
+body ul .lineLast.active::before {
     background-color: $colorPoint;
 }
 
-.lineLast::after {
+body ul .lineLast::after {
     left: -20px;
     top: -2px;
     width: 16px;
@@ -141,24 +180,24 @@ body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue.ho
     background-color: $colorPointd;
 }
 
-.lineLast::before {
-    left: -17px;
-    top: 1px;
+body ul .lineLast::before {
+    left: -17.1px;
+    top: 0.8px;
     width: 10px;
     height: 10px;
     background-color: $colorPointLast;
     z-index: 1;
 }
 
-.spanLast {
+body ul li .spanLast {
     font-size: 15px;
 }
 
-.spanLast.active {
+body ul li .spanLast.active {
     font-weight: bold;
 }
 
-.labelVaild::before {
+body div form div div .labelVaild::before {
     content: "*";
     position: absolute;
     right: 0;
@@ -167,7 +206,67 @@ body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue.ho
     font-size: 17px;
 }
 
+body div form div .rowChild {
+    row-gap: 25px;
+}
+
+body div form div .rowChild div div .divLine .imageWidthInput {
+    top: 12px;
+    left: 7px;
+    width: 23px;
+}
+
+body div form div .rowChild div div .divLine .imageWidthInputOverflow {
+    top: 12px;
+    left: 90%;
+    width: 23px;
+}
+
+body div form div .rowChild div div div .inputPaddingOverflow::placeholder {
+    padding-left: 0;
+}
+
+body div form div .rowChild div div div .selectWaths {
+    top: 2px;
+    left: 5px;
+    border: transparent;
+    border-right: 2px solid $colorPointLast;
+    height: 90%;
+}
+
 // end SignUp
+// start checkEmail
+body div form div .inputWidthEmail {
+    width: 47px;
+    border-radius: 5px;
+}
+
+body div form div .borderColorNormal {
+    border: 1.5px solid $colorPoint;
+}
+
+body div form div .inputWidthEmail::placeholder {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+body div form div .inputWidthEmailTrue {
+    border: 2px solid $colorGreen;
+}
+
+body div form div .inputWidthEmailTrue::placeholder {
+    color: $colorGreen;
+}
+
+body div form div .inputWidthEmailFalse {
+    border: 2px solid $colorRed;
+}
+
+body div form div .inputWidthEmailFalse::placeholder {
+    color: $colorRed !important;
+}
+
+// end CheckEmail
 // start media
 @media (max-width: 990px) {
     body .divHayThere {
@@ -180,6 +279,10 @@ body .divHayThere div .divHayPerint div div .rowGapColumn div .ButtonContinue.ho
 
     body nav div .imageLoginWidth {
         width: 50px;
+    }
+
+    .listNoneMobile {
+        display: none;
     }
 }
 
