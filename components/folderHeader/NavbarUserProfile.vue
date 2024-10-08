@@ -11,7 +11,7 @@
                 <img src="/assets/images/OpportunityPioneers.png" alt="">
             </router-link>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="d-flex w-100 flex-column flex-lg-row align-items-lg-center p-4 p-md-0">
+                <div class="d-flex w-100 flex-column flex-lg-row align-items-lg-center p-4 p-md-0 gap-3 gap-md-0">
                     <div class="d-flex align-items-center gap-4">
                         <ul class="navbar-nav d-flex gap-3 gap-lg-5">
                             <li class="nav-item">

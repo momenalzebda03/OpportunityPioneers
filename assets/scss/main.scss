@@ -54,6 +54,10 @@ ul {
     row-gap: 25px;
 }
 
+.textArea {
+    resize: none;
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -314,16 +318,6 @@ body .paddingPageProfile {
 
 // end page Profile All
 // start Page Profile navbarSide
-// body div div div div .textExport {
-//     background-color: $colorExport;
-//     border: 2px solid $colorGreen;
-// }
-
-// body div div div div .textExport:hover {
-//     background-color: $colorGreen;
-//     color: $colorWhite !important;
-// }
-
 body div div div div div .linkPhoto {
     width: 40px;
     bottom: -22px;
@@ -361,17 +355,11 @@ body div div div div .hoverButton:hover {
 
 // end Page Profile navbarSide
 // start page Profile Center
-.divBorderBottomProfileText {
+body div .divBorderBottomProfileText {
     border-bottom: 2px solid $colorNavbarChildProfile;
 }
 
-.divAbsoluteCardHover {
-    border-radius: 0 0 10px 10px;
-    background-color: $colorCardBottom;
-    display: none;
-}
-
-.hoverImageCard:hover {
+body div .rowChild div .hoverImageCard:hover {
     .divAbsoluteCardHover {
         display: block;
 
@@ -387,6 +375,27 @@ body div div div div .hoverButton:hover {
     }
 }
 
+body div .rowChild div .hoverImageCard .divAbsoluteCardHover {
+    border-radius: 0 0 10px 10px;
+    background-color: $colorCardBottom;
+    display: none;
+}
+
+.modal-content {
+    min-width: 800px !important;
+    margin-left: -100px !important;
+}
+
+.divImageTextErea {
+    top: 40px;
+    left: 250px;
+}
+
+.textAreaPlaceholder::placeholder {
+    position: absolute;
+    top: 65px;
+    left: 230px;
+}
 // end page Profile Center
 // start media
 @media (max-width: 990px) {
@@ -408,6 +417,18 @@ body div div div div .hoverButton:hover {
 
     body nav div div div div .imageSearch {
         left: 8px;
+    }
+
+    body nav div div ul li .linkColorNavbarProfile.active,
+    body nav div div ul li .linkColorNavbarProfile:hover {
+        color: $colorBlack;
+        padding-bottom: 10px;
+        border-bottom: transparent;
+    }
+
+    .modal-content {
+        min-width: 0 !important;
+        margin-left: 0 !important;
     }
 }
 

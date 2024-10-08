@@ -1,53 +1,49 @@
 <template>
     <div class="border border-1 rounded-3 py-4">
-        <div class="container ">
-            <NavbarChildProfile />
-            <div class="mx-3 d-flex flex-column gap-4">
-                <div class="d-flex align-items-center justify-content-between mt-3 pb-3 divBorderBottomProfileText">
-                    <h2 class="mt-3 fw-bold fs-6">projects</h2>
-                    <img src="/assets/images/plus.png" alt="" class="imageMouse">
-                </div>
-                <div class="row rowChild">
-                    <div class="col col-lg-4" v-for="test in 9" :key="test">
-                        <div class="position-relative hoverImageCard">
-                            <img src="/assets/images/LiveProjectCard.png" alt="" class="w-100">
-                            <div class="position-absolute divAbsoluteCardHover bottom-0 w-100 text-white py-4">
-                                <div class="container">
-                                    <h2 class="fs-6">Real Estate Mobile App Case Study</h2>
-                                    <ul class="row px-0 mt-2 mb-0">
-                                        <li class="col-4">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <img src="/assets/images/yay.png" alt="">
-                                                <span>2500</span>
-                                            </div>
-                                        </li>
-                                        <li class="col-4">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <img src="/assets/images/like.png" alt="">
-                                                <span>2500</span>
-                                            </div>
-                                        </li>
-                                        <li class="col-4">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <img src="/assets/images/messageList.png" alt="">
-                                                <span>2500</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container d-flex flex-row-reverse flex-lg-row">
+                    <div class="d-flex justify-content-center">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mx-2" v-for="(item, index) in listCard" :key="index">
+                                <router-link to="" class="text-decoration-none linkColorNavbarProfile"
+                                    :class="{ 'active': item.active }" @click="setActive(index)">
+                                    {{ item.textLink }}
+                                </router-link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
+            <centerProjects v-if="listCard[0].active" />
+            <centerExperience v-if="listCard[1].active" />
+            <!-- Add more components as needed -->
         </div>
     </div>
 </template>
 
 <script setup>
-import NavbarChildProfile from "../folderHeader/navbarChildProfile.vue";
+import { ref } from 'vue';
+import centerProjects from "../componentCenterProfile/centerProjects";
+import centerExperience from "../componentCenterProfile/centerExperience";
 
-// const apiImage = ref ([
-//     {}
-// ])
+const listCard = ref([
+    { textLink: 'projects', active: true },
+    { textLink: 'Experience', active: false },
+    { textLink: 'Certifications', active: false },
+    { textLink: 'Drafts', active: false }
+]);
+
+// Function to update active state
+const setActive = (index) => {
+    listCard.value.forEach((item, i) => {
+        item.active = (i === index);
+    });
+};
 </script>

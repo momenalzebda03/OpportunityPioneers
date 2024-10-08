@@ -3,9 +3,7 @@
         <div class="container">
             <div class="d-flex flex-column gap-2">
                 <div>
-                    <router-link to="" type="button" class="btn btn-outline-success px-4 py-1">Export</router-link>
-                    <!-- <router-link to=""
-                        class="textExport text-decoration-none rounded-3 fw-bold px-4 py-1">Export</router-link> -->
+                    <router-link to="" type="button" class="btn btn-outline-success px-4 py-1">Export</router-link>                    
                     <div class="my-3 container d-flex gap-2 align-items-center">
                         <div class="d-flex flex-column position-relative">
                             <img src="/assets/images/user.png" alt="" class="w-100">

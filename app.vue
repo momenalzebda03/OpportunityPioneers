@@ -1,6 +1,6 @@
 <template>
-  <ComponentNavbarSignUp v-if="currentRoute != '/userProfile'" />
-  <ComponentNavbarUserProfile v-if="currentRoute == '/userProfile'" />
+  <ComponentNavbarSignUp v-if="currentRoute != '/userProfileProjects'" />
+  <ComponentNavbarUserProfile v-if="currentRoute == '/userProfileProjects'" />
   <NuxtPage />
 </template>
 
