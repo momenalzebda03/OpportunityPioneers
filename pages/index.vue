@@ -27,7 +27,7 @@
     </componentCenter>
     <!-- page HayThere -->
 </template>
-  
+
 <script setup>
 import { ref, onMounted } from 'vue';
 const isClient = ref(false);

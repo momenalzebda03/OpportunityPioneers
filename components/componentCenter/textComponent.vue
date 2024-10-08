@@ -1,5 +1,5 @@
 <template>
-    <div v-for="item in  ApiText " :key="index">
+    <div v-for="item in ApiText" :key="index">
         <div class="text-center d-flex flex-column gap-2" v-if="currentRoute == item.url">
             <h1 class="fs-3 fw-bold">{{ item.title }}</h1>
             <h2 class="fs-6 hChild">{{ item.text }}</h2>

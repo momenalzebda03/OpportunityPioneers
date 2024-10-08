@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom w-100 position-fixed">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom w-100 position-fixed indexNavbarPerint">
         <div class="container d-flex flex-row-reverse flex-lg-row">
             <div class="d-flex justify-content-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -7,25 +7,27 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <img src="/assets/images/OpportunityPioneers.png" alt="">
+            <router-link to="/">
+                <img src="/assets/images/OpportunityPioneers.png" alt="">
+            </router-link>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="d-flex w-100 flex-column flex-lg-row align-items-lg-center">
+                <div class="d-flex w-100 flex-column flex-lg-row align-items-lg-center p-4 p-md-0">
                     <div class="d-flex align-items-center gap-4">
-                        <ul class="navbar-nav d-flex gap-3 gap-lg-5 mb-2">
+                        <ul class="navbar-nav d-flex gap-3 gap-lg-5">
                             <li class="nav-item">
-                                <router-link to="" class="lineNone">page1</router-link>
+                                <router-link to="" class="text-decoration-none lineNone">page1</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="" class="lineNone">page2</router-link>
+                                <router-link to="" class="text-decoration-none lineNone">page2</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="" class="lineNone">page3</router-link>
+                                <router-link to="" class="text-decoration-none lineNone">page3</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="" class="lineNone">page4</router-link>
+                                <router-link to="" class="text-decoration-none lineNone">page4</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="" class="lineNone">page5</router-link>
+                                <router-link to="" class="text-decoration-none lineNone">page5</router-link>
                             </li>
                         </ul>
                     </div>

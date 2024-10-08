@@ -1,6 +1,10 @@
 @import "color";
 
 // start other
+body {
+    text-transform: capitalize;
+}
+
 .nuxt-devtools-hide {
     display: none !important;
 }
@@ -46,8 +50,16 @@ ul {
     padding-left: 27px;
 }
 
+.rowChild {
+    row-gap: 25px;
+}
+
 // end other
 // start navbar Sign Up
+body .indexNavbarPerint {
+    z-index: 3;
+}
+
 body nav {
     z-index: 2;
 }
@@ -59,22 +71,34 @@ body nav {
 // end navbar Sign Up
 
 // start navbar User Profile
-.lineNone {
+body nav div div div div ul li .lineNone {
     color: $colorBlack;
-    text-decoration: none;
 }
 
-.lineNone:hover {
+body nav div div div div ul li .lineNone:hover {
     color: $colorBlue;
     text-decoration: underline;
 }
 
-.imageSearch {
+body nav div div div div .imageSearch {
     top: 10px;
     left: 22px;
 }
 
 // end navbar User Profile
+// start navbar child profile
+body nav div div ul li .linkColorNavbarProfile {
+    color: $colorNavbarChildProfile;
+}
+
+body nav div div ul li .linkColorNavbarProfile.active,
+body nav div div ul li .linkColorNavbarProfile:hover {
+    color: $colorBlack;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $colorBlack;
+}
+
+// end navba child profile
 // start HayThere
 body .divHayThere {
     padding-top: 120px !important;
@@ -207,10 +231,6 @@ body div form div div .labelVaild::before {
     font-size: 17px;
 }
 
-body div form div .rowChild {
-    row-gap: 25px;
-}
-
 body div form div .rowChild div div .divLine .imageWidthInput {
     top: 12px;
     left: 7px;
@@ -242,11 +262,11 @@ body div form div .rowChild div div div .selectWaths {
     }
 }
 
-summary {
+body div form .rowChild div div div .selectWaths summary {
     list-style: none;
 }
 
-.selectWaths li {
+body div form .rowChild div div div .selectWaths li {
     list-style: none;
 }
 
@@ -271,6 +291,7 @@ body div form div .inputWidthEmailTrue {
     border: 2px solid $colorGreen;
 }
 
+// .textExport,
 body div form div .inputWidthEmailTrue::placeholder {
     color: $colorGreen;
 }
@@ -285,6 +306,88 @@ body div form div .inputWidthEmailFalse::placeholder {
 }
 
 // end CheckEmail
+// start page Profile All
+body .paddingPageProfile {
+    padding-top: 120px;
+    padding-bottom: 30px;
+}
+
+// end page Profile All
+// start Page Profile navbarSide
+// body div div div div .textExport {
+//     background-color: $colorExport;
+//     border: 2px solid $colorGreen;
+// }
+
+// body div div div div .textExport:hover {
+//     background-color: $colorGreen;
+//     color: $colorWhite !important;
+// }
+
+body div div div div div .linkPhoto {
+    width: 40px;
+    bottom: -22px;
+    left: 20px;
+}
+
+body div div div div div div div .spanPioneers {
+    font-size: 12px;
+}
+
+body div div div div .hoverButton .linkEdit {
+    color: $colorGreen;
+}
+
+.imageMouse,
+body div div div div .hoverButton {
+    cursor: pointer;
+}
+
+body div div div div .hoverButton:hover {
+    .linkEdit {
+        color: $colorWhite;
+    }
+
+    .linkEdit::before {
+        filter: grayscale(100%) brightness(10000%);
+    }
+}
+
+.linkEdit::before {
+    content: url("/assets/images/pinsle.png");
+    position: absolute;
+    left: 40px;
+}
+
+// end Page Profile navbarSide
+// start page Profile Center
+.divBorderBottomProfileText {
+    border-bottom: 2px solid $colorNavbarChildProfile;
+}
+
+.divAbsoluteCardHover {
+    border-radius: 0 0 10px 10px;
+    background-color: $colorCardBottom;
+    display: none;
+}
+
+.hoverImageCard:hover {
+    .divAbsoluteCardHover {
+        display: block;
+
+        div {
+            ul {
+                li {
+                    div {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end page Profile Center
 // start media
 @media (max-width: 990px) {
     body .divHayThere {
@@ -300,7 +403,11 @@ body div form div .inputWidthEmailFalse::placeholder {
     }
 
     .listNoneMobile {
-        display: none;
+        display: none !important;
+    }
+
+    body nav div div div div .imageSearch {
+        left: 8px;
     }
 }
 
