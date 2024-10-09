@@ -37,12 +37,12 @@
 import ComponentModal from "../componentCenterProfile/compnentModal.vue";
 
 const arrayExerience = ref([
-    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
+    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
+    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
+    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
+    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
+    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
 ])
 
 const functionDeleteKey = (element) => {

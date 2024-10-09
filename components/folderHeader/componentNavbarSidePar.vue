@@ -3,7 +3,7 @@
         <div class="container">
             <div class="d-flex flex-column gap-2">
                 <div>
-                    <router-link to="" type="button" class="btn btn-outline-success px-4 py-1">Export</router-link>                    
+                    <router-link to="" type="button" class="btn btn-outline-success px-4 py-1">Export</router-link>
                     <div class="my-3 container d-flex gap-2 align-items-center">
                         <div class="d-flex flex-column position-relative">
                             <img src="/assets/images/user.png" alt="" class="w-100">
@@ -21,8 +21,10 @@
                         </div>
                     </div>
                     <div class="position-relative hoverButton">
-                        <router-link to="" type="button" class="w-100 linkEdit mt-4 btn btn-outline-success px-4 py-1">Edit
-                            Profile Information</router-link>
+                        <div class="mt-5">
+                            <router-link to="" type="button" class="w-100 linkEdit btn btn-outline-success px-4 py-1">Edit
+                                Profile Information</router-link>
+                        </div>
                     </div>
                     <hr>
                 </div>

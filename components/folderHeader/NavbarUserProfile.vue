@@ -41,13 +41,19 @@
                 </div>
                 <ul class="row mt-3 listNoneMobile">
                     <li class="col-lg-4">
-                        <img src="/assets/images/massage.png" alt="">
+                        <router-link to="">
+                            <img src="/assets/images/massage.png" alt="">
+                        </router-link>
                     </li>
                     <li class="col-lg-4">
-                        <img src="/assets/images/bell.png" alt="">
+                        <router-link to="">
+                            <img src="/assets/images/bell.png" alt="">
+                        </router-link>
                     </li>
                     <li class="col-lg-4">
-                        <img src="/assets/images/user.png" alt="" class="w-100">
+                        <router-link to="/pageCreateDataUser">
+                            <img src="/assets/images/user.png" alt="" class="w-100">
+                        </router-link>
                     </li>
                 </ul>
             </div>

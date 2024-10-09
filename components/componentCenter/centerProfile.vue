@@ -23,7 +23,8 @@
             </nav>
             <centerProjects v-if="listCard[0].active" />
             <centerExperience v-if="listCard[1].active" />
-            <!-- Add more components as needed -->
+            <centerCertifical v-if="listCard[2].active" />
+            <centerDrafts v-if="listCard[3].active" />
         </div>
     </div>
 </template>
@@ -32,6 +33,8 @@
 import { ref } from 'vue';
 import centerProjects from "../componentCenterProfile/centerProjects";
 import centerExperience from "../componentCenterProfile/centerExperience";
+import centerCertifical from "../componentCenterProfile/centerCertifications";
+import centerDrafts from "../componentCenterProfile/centerDrafts";
 
 const listCard = ref([
     { textLink: 'projects', active: true },
@@ -40,7 +43,6 @@ const listCard = ref([
     { textLink: 'Drafts', active: false }
 ]);
 
-// Function to update active state
 const setActive = (index) => {
     listCard.value.forEach((item, i) => {
         item.active = (i === index);

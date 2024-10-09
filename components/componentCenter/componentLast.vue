@@ -1,4 +1,5 @@
 <template>
+    <!-- create here the stepper please and sloat the pages and exmail adderss and phone number and create array of object here -->
     <ul class="row p-0 mt-4">
         <li class="col">
             <div class="d-flex flex-column gap-2">

@@ -58,6 +58,10 @@ ul {
     resize: none;
 }
 
+label {
+    font-weight: bold;
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -235,15 +239,21 @@ body div form div div .labelVaild::before {
     font-size: 17px;
 }
 
-body div form div .rowChild div div .divLine .imageWidthInput {
+.imageWidthInput {
     top: 12px;
     left: 7px;
     width: 23px;
 }
 
-body div form div .rowChild div div .divLine .imageWidthInputOverflow {
+.imageWidthInputOverflow {
     top: 12px;
     left: 90%;
+    width: 23px;
+}
+
+.imageWidthInputOverflow1 {
+    top: 52px;
+    left: 96%;
     width: 23px;
 }
 
@@ -295,7 +305,7 @@ body div form div .inputWidthEmailTrue {
     border: 2px solid $colorGreen;
 }
 
-// .textExport,
+.colorProfile,
 body div form div .inputWidthEmailTrue::placeholder {
     color: $colorGreen;
 }
@@ -328,7 +338,9 @@ body div div div div div div div .spanPioneers {
     font-size: 12px;
 }
 
+.linkGreen,
 body div div div div .hoverButton .linkEdit {
+    text-decoration: none;
     color: $colorGreen;
 }
 
@@ -354,6 +366,16 @@ body div div div div .hoverButton:hover {
 }
 
 // end Page Profile navbarSide
+// start center projects
+.divHoverListExperience:hover {
+    box-shadow: 0 2px 7px 0 $colorNavbarChildProfile;
+
+    img {
+        display: block !important;
+    }
+}
+
+// end center projects
 // start page Profile Center
 body div .divBorderBottomProfileText {
     border-bottom: 2px solid $colorNavbarChildProfile;
@@ -361,7 +383,7 @@ body div .divBorderBottomProfileText {
 
 body div .rowChild div .hoverImageCard:hover {
     .divAbsoluteCardHover {
-        display: block;
+        bottom: 0;
 
         div {
             ul {
@@ -378,25 +400,42 @@ body div .rowChild div .hoverImageCard:hover {
 body div .rowChild div .hoverImageCard .divAbsoluteCardHover {
     border-radius: 0 0 10px 10px;
     background-color: $colorCardBottom;
-    display: none;
+    bottom: -100px;
+    transition: 0.5s;
 }
 
-.modal-content {
+body div div div div .modal-content {
     min-width: 800px !important;
     margin-left: -100px !important;
 }
 
-.divImageTextErea {
+body div div div div div form div div .divImageTextErea {
     top: 40px;
     left: 250px;
 }
 
-.textAreaPlaceholder::placeholder {
+body div div div div div form div div .textAreaPlaceholder::placeholder {
     position: absolute;
     top: 65px;
     left: 230px;
 }
+
+body div div div div div form div div .textAreaPlaceholder {
+    border: 2px dotted $colorNavbarChildProfile;
+}
+
+body div div div div div form div div .inputConfirm:hover {
+    background-color: $colorWhite !important;
+    color: $colorGreen !important;
+}
+
 // end page Profile Center
+// start page create data user
+.linkPhotoForm {
+    left: 395px !important;
+}
+
+// end page create data user
 // start media
 @media (max-width: 990px) {
     body .divHayThere {
@@ -421,14 +460,16 @@ body div .rowChild div .hoverImageCard .divAbsoluteCardHover {
 
     body nav div div ul li .linkColorNavbarProfile.active,
     body nav div div ul li .linkColorNavbarProfile:hover {
-        color: $colorBlack;
-        padding-bottom: 10px;
         border-bottom: transparent;
     }
 
-    .modal-content {
+    body div div div div .modal-content {
         min-width: 0 !important;
         margin-left: 0 !important;
+    }
+
+    .linkPhotoForm {
+        left: 130px !important;
     }
 }
 
