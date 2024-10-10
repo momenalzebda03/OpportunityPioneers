@@ -1,36 +1,206 @@
 <template>
     <div>
-        <img src="/assets/images/plus.png" alt="Open Experience Modal" class="imageMouse" @click="openModal('project')" />
-        <div v-if="isModalOpen" class="modal fade show" tabindex="-1" style="display: block;">
+        <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal" />
+        <div class="modal fade" tabindex="-1">
             <div class="modal-dialog shadow-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">{{ modalTitle }}</h5>
+                        <h5 class="modal-title">Add New Project</h5>
                         <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form @submit.prevent="saveChanges">
-                            <div v-if="modalType == 'project'">
-                                <div class="d-flex flex-column gap-3">
-                                    <div>
-                                        <label for="projectTitle">Project Title</label>
-                                        <input type="text" id="projectTitle" placeholder="Content"
-                                            class="w-100 rounded-3 p-2 border" />
+                        <form action="" method="">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Project Title</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Your Role</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Skills</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Project Description</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Project Content</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <div class="position-relative">
+                                        <textarea name="" id="" cols="100" rows="4" class="textArea rounded-3 p-2 border">
+                                            </textarea>
+                                        <ul class="position-absolute d-flex align-items-center divImageTextErea gap-4">
+                                            <li class="imageMouse">
+                                                <img src="/assets/images/Gallery.png" alt="" class="w-100">
+                                            </li>
+                                            <li class="imageMouse">
+                                                <img src="/assets/images/Videocam.png" alt="" class="w-100">
+                                            </li>
+                                            <li class="imageMouse">
+                                                <img src="/assets/images/Link.png" alt="" class="w-100">
+                                            </li>
+                                            <li class="imageMouse">
+                                                <img src="/assets/images/File.png" alt="" class="w-100">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1 position-relative">
+                                    <textarea name="" id="" cols="100" rows="6" value=""
+                                        placeholder="Your Uploaded Content Will display here"
+                                        class="textArea textAreaPlaceholder rounded-3 p-2">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between">
+                                <div>
+                                    <router-link to="" class="linkGreen fw-bold">Preview</router-link>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <input type="submit" class="btn btn-outline-success" @click="closeModal"
+                                        value="Save as draft" />
+                                    <input type="submit" class="btn btn-success inputConfirm" @click="saveChanges"
+                                        value="Confirm" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New experience</h5>
+                        <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="">
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Company Name</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex w-100 gap-4">
+                                    <div class="d-flex flex-column gap-1 w-100">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <label for="">Employment Type</label>
+                                            <label for="" class="fs-5 text-danger mt-2">*</label>
+                                        </div>
+                                        <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                            <option value="">content</option>
+                                            <option value="">content</option>
+                                        </select>
+                                        <span>Helper Place holder</span>
+                                    </div>
+                                    <div class="d-flex flex-column gap-1 w-100">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <label for="">Employment Type</label>
+                                            <label for="" class="fs-5 text-danger mt-2">*</label>
+                                        </div>
+                                        <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                            <option value="">content</option>
+                                            <option value="">content</option>
+                                        </select>
+                                        <span>Helper Place holder</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Location</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Skills</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                    <span>Helper Place holder</span>
+                                </div>
+                                <div class="d-flex gap-1">
+                                    <input type="checkbox" id="currently" class="inputBox">
+                                    <label for="currently" class="sizeLabel">I am currently working in this role</label>
+                                </div>
+                            </div>
+                            <div class="d-flex w-100 gap-4">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">Start Date</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <div class="d-flex w-100 gap-3">
+                                        <div class="d-flex flex-column gap-1 w-100">
+                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                <option value="">Year</option>
+                                                <option value="">Year</option>
+                                            </select>
+                                            <span>Helper Place holder</span>
+                                        </div>
+                                        <div class="d-flex flex-column gap-1 w-100">
+                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                <option value="">Month</option>
+                                                <option value="">Month</option>
+                                            </select>
+                                            <span>Helper Place holder</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="">End Date</label>
+                                        <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    </div>
+                                    <div class="d-flex w-100 gap-3">
+                                        <div class="d-flex flex-column gap-1 w-100">
+                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                <option value="">Year</option>
+                                                <option value="">Year</option>
+                                            </select>
+                                            <span>Helper Place holder</span>
+                                        </div>
+                                        <div class="d-flex flex-column gap-1 w-100">
+                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                <option value="">Month</option>
+                                                <option value="">Month</option>
+                                            </select>
+                                            <span>Helper Place holder</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div v-if="modalType == 'experience'">
-                                <div class="d-flex flex-column gap-3">
-                                    <div>
-                                        <label for="companyName">Company Name</label>
-                                        <input type="text" id="companyName" placeholder="Content"
-                                            class="w-100 rounded-3 p-2 border" />
-                                    </div>
+                            <div class="modal-footer mt-4">
+                                <div class="d-flex gap-3">
+                                    <input type="submit" class="btn btn-success inputConfirm" @click="saveChanges"
+                                        value="Confirm" />
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" @click="closeModal">Close</button>
-                                <button type="submit" class="btn btn-success">Confirm</button>
                             </div>
                         </form>
                     </div>
@@ -41,253 +211,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const isModalOpen = ref(false);
-const modalType = ref('');
-const modalTitle = ref('');
-
-const openModal = (type) => {
-    modalType.value = type;
-    modalTitle.value = type === 'project' ? 'Add New Project' : 'Add New Experience';
-    isModalOpen.value = true;
-};
-
-const closeModal = () => {
-    isModalOpen.value = false;
-};
-
-const saveChanges = () => {
-    // Handle form submission logic
-    closeModal();
-};
-</script>
-
-<!-- <template>
-    <div>
-        <div>
-            <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal('project')" />
-            <div class="modal fade" tabindex="-1">
-                <div class="modal-dialog shadow-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">{{ modalTitle }}</h5>
-                            <h5 class="modal-title">Add New Project</h5>
-                            <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="">
-                                <div class="d-flex flex-column gap-3">
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Project Title</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Your Role</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Skills</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Project Description</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Project Content</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <div class="position-relative">
-                                            <textarea name="" id="" cols="100" rows="4"
-                                                class="textArea rounded-3 p-2 border">
-                                            </textarea>
-                                            <ul class="position-absolute d-flex align-items-center divImageTextErea gap-4">
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Gallery.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Videocam.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Link.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/File.png" alt="" class="w-100">
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1 position-relative">
-                                        <textarea name="" id="" cols="100" rows="6" value=""
-                                            placeholder="Your Uploaded Content Will display here"
-                                            class="textArea textAreaPlaceholder rounded-3 p-2">
-                                        </textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer d-flex justify-content-between">
-                                    <div>
-                                        <router-link to="" class="linkGreen fw-bold">Preview</router-link>
-                                    </div>
-                                    <div class="d-flex gap-3">
-                                        <input type="submit" class="btn btn-outline-success" @click="closeModal"
-                                            value="Save as draft" />
-                                        <input type="submit" class="btn btn-success inputConfirm" @click="saveChanges"
-                                            value="Confirm" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal('experience')" />
-            <div class="modal fade" tabindex="-1">
-                <div class="modal-dialog shadow-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">{{ modalTitle }}</h5>
-                            <h5 class="modal-title">Add New Project</h5>
-                            <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="">
-                                <div class="d-flex flex-column gap-3">
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Company Name</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex w-100 gap-4">
-                                        <div class="d-flex flex-column gap-1 w-100">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <label for="">Employment Type</label>
-                                                <label for="" class="fs-5 text-danger mt-2">*</label>
-                                            </div>
-                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                <option value="">content</option>
-                                                <option value="">content</option>
-                                            </select>
-                                            <span>Helper Place holder</span>
-                                        </div>
-                                        <div class="d-flex flex-column gap-1 w-100">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <label for="">Employment Type</label>
-                                                <label for="" class="fs-5 text-danger mt-2">*</label>
-                                            </div>
-                                            <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                <option value="">content</option>
-                                                <option value="">content</option>
-                                            </select>
-                                            <span>Helper Place holder</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Location</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Skills</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex gap-1">
-                                        <input type="checkbox" id="currently" class="inputBox">
-                                        <label for="currently" class="sizeLabel">I am currently working in this role</label>
-                                    </div>
-                                </div>
-                                <div class="d-flex w-100 gap-4">
-                                    <div class="w-100">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Start Date</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <div class="d-flex w-100 gap-3">
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                    <option value="">Year</option>
-                                                    <option value="">Year</option>
-                                                </select>
-                                                <span>Helper Place holder</span>
-                                            </div>
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                    <option value="">Month</option>
-                                                    <option value="">Month</option>
-                                                </select>
-                                                <span>Helper Place holder</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="w-100">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">End Date</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
-                                        </div>
-                                        <div class="d-flex w-100 gap-3">
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                    <option value="">Year</option>
-                                                    <option value="">Year</option>
-                                                </select>
-                                                <span>Helper Place holder</span>
-                                            </div>
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                    <option value="">Month</option>
-                                                    <option value="">Month</option>
-                                                </select>
-                                                <span>Helper Place holder</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer mt-4">
-                                    <div class="d-flex gap-3">
-                                        <input type="submit" class="btn btn-success inputConfirm" @click="saveChanges"
-                                            value="Confirm" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template> -->
-
-<!-- <script setup>
 import { ref, computed, nextTick } from 'vue';
 
 const props = defineProps(['activeForm', 'showModal']);
@@ -323,4 +246,4 @@ const saveChanges = () => {
     // Implement your save logic here
     closeModal();
 };
-</script> -->
+</script>

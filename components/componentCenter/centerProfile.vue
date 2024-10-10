@@ -25,7 +25,6 @@
             <centerExperience v-if="listCard[1].active" />
             <centerCertifical v-if="listCard[2].active" />
             <centerDrafts v-if="listCard[3].active" />
-            <componentModal :activeForm="activeForm" :showModal="showModal" @close-modal="closeModal" />
         </div>
     </div>
 </template>
@@ -36,7 +35,6 @@ import centerProjects from "../componentCenterProfile/centerProjects";
 import centerExperience from "../componentCenterProfile/centerExperience";
 import centerCertifical from "../componentCenterProfile/centerCertifications";
 import centerDrafts from "../componentCenterProfile/centerDrafts";
-import componentModal from "../componentCenterProfile/compnentModal";
 
 const listCard = ref([
     { textLink: 'Projects', active: true },
