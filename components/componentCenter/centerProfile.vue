@@ -13,7 +13,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item mx-2" v-for="(item, index) in listCard" :key="index">
                                 <router-link to="" class="text-decoration-none linkColorNavbarProfile"
-                                    :class="{ 'active': item.active }" @click="setActive(index)">
+                                    :class="{ 'active': item.active }" @click.prevent="setActive(index, item.textLink)">
                                     {{ item.textLink }}
                                 </router-link>
                             </li>
@@ -23,10 +23,9 @@
             </nav>
             <centerProjects v-if="listCard[0].active" />
             <centerExperience v-if="listCard[1].active" />
-            <!-- <centerExperience v-if="listCard[1].active" @open-modal="openModal('experience')" /> -->
             <centerCertifical v-if="listCard[2].active" />
             <centerDrafts v-if="listCard[3].active" />
-            <!-- <componentModal :activeForm="activeForm" :showModal="showModal" @close-modal="closeModal" /> -->
+            <componentModal :activeForm="activeForm" :showModal="showModal" @close-modal="closeModal" />
         </div>
     </div>
 </template>
@@ -37,30 +36,28 @@ import centerProjects from "../componentCenterProfile/centerProjects";
 import centerExperience from "../componentCenterProfile/centerExperience";
 import centerCertifical from "../componentCenterProfile/centerCertifications";
 import centerDrafts from "../componentCenterProfile/centerDrafts";
-// import componentModal from "../componentCenterProfile/compnentModal";
-
-// const showModal = ref(false);
-// const activeForm = ref('');
+import componentModal from "../componentCenterProfile/compnentModal";
 
 const listCard = ref([
-    { textLink: 'projects', active: true },
+    { textLink: 'Projects', active: true },
     { textLink: 'Experience', active: false },
     { textLink: 'Certifications', active: false },
     { textLink: 'Drafts', active: false }
 ]);
 
-const setActive = (index) => {
+const activeForm = ref('');
+const showModal = ref(false);
+
+const setActive = (index, form) => {
     listCard.value.forEach((item, i) => {
         item.active = (i === index);
     });
+    activeForm.value = form.toLowerCase();
+    showModal.value = true;
 };
 
-// const openModal = (formType) => {
-//     activeForm.value = formType;
-//     showModal.value = true;
-// };
-
-// const closeModal = () => {
-//     showModal.value = false;
-// };
+const closeModal = () => {
+    showModal.value = false;
+    activeForm.value = '';
+};
 </script>

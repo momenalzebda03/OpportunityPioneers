@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div @click="functionDeleteKey(item.key)">
-                        <img src="/assets/images/delete.png" alt="">
+                        <img src="/assets/images/delete.png" alt="" class="d-none">
                     </div>
                 </div>
             </li>

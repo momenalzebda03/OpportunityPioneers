@@ -1,5 +1,4 @@
 <template>
-    <!-- page HayThere -->
     <componentCenter>
         <ComponentCenterText />
         <div class="mt-4">
@@ -25,7 +24,6 @@
             </div>
         </div>
     </componentCenter>
-    <!-- page HayThere -->
 </template>
 
 <script setup>

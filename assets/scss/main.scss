@@ -162,10 +162,10 @@ body .divHayThere div .divHayPerint div div .rowGapColumn ul .active {
     }
 
     .divPoint::after {
-        left: 0;
-        top: 0;
-        width: 20px;
-        height: 20px;
+        left: 0x;
+        top: 0.5px;
+        width: 16.5px;
+        height: 16.5px;
         background-color: $colorGreen;
     }
 
@@ -368,8 +368,6 @@ body div div div div .hoverButton:hover {
 // end Page Profile navbarSide
 // start center projects
 .divHoverListExperience:hover {
-    box-shadow: 0 2px 7px 0 $colorNavbarChildProfile;
-
     img {
         display: block !important;
     }
@@ -381,27 +379,9 @@ body div .divBorderBottomProfileText {
     border-bottom: 2px solid $colorNavbarChildProfile;
 }
 
-body div .rowChild div .hoverImageCard:hover {
-    .divAbsoluteCardHover {
-        bottom: 0;
-
-        div {
-            ul {
-                li {
-                    div {
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-    }
-}
-
 body div .rowChild div .hoverImageCard .divAbsoluteCardHover {
     border-radius: 0 0 10px 10px;
     background-color: $colorCardBottom;
-    bottom: -100px;
-    transition: 0.5s;
 }
 
 body div div div div .modal-content {
