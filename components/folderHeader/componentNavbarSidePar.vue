@@ -7,9 +7,10 @@
                     <div class="my-3 container d-flex gap-2 align-items-center">
                         <div class="d-flex flex-column position-relative">
                             <img src="/assets/images/user.png" alt="" class="w-100">
-                            <router-link to="">
-                                <img src="/assets/images/photo.png" alt="" class="position-absolute linkPhoto">
-                            </router-link>
+                            <div @click="triggerFileInput" class="position-relative">
+                                <img src="/assets/images/photo.png" alt="" class="position-absolute linkPhoto imageMouse">
+                                <input type="file" ref="fileInput" class="d-none" @change="handleFileChange" />
+                            </div>
                         </div>
                         <div class="d-flex flex-column gap-1">
                             <h2 class="fs-5 fw-bold my-0">Mostafa Saleh</h2>
@@ -99,3 +100,22 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const fileInput = ref(null);
+
+const triggerFileInput = () => {
+    if (fileInput.value) {
+        fileInput.value.click();
+    }
+};
+
+const handleFileChange = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        console.log('Selected file:', files[0]);
+    }
+};
+</script>

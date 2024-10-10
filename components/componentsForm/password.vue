@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="text-end mt-3">
-                        <router-link to="" class="btn btn-success inputConfirm px-4 py-2">save</router-link>
+                        <input type="submit" class="btn btn-success inputConfirm px-4 py-2" value="save" />
                     </div>
                 </form>
             </div>

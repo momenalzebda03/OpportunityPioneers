@@ -25,8 +25,9 @@
                     </div>
                     <PersonalInfomation v-if="listCard[0].active" />
                     <password v-if="listCard[1].active" />
-                    <!--    <centerCertifical v-if="listCard[2].active" />
-                        <centerDrafts v-if="listCard[3].active" /> -->
+                    <centerCertifical v-if="listCard[2].active" />
+                    <Exeriences v-if="listCard[3].active" />
+                    <Certifications v-if="listCard[4].active" />
                 </div>
             </div>
         </div>
@@ -37,8 +38,9 @@
 import { ref } from 'vue';
 import PersonalInfomation from "../components/componentsForm/PersonalInfomation";
 import password from "../components/componentsForm/password";
-// import password from "../components/componentsForm/password";
-// import password from "../components/componentsForm/password";
+import centerCertifical from "../components/componentsForm/ConnectedProfiles.vue";
+import Exeriences from "../components/componentsForm/Experiences";
+import Certifications from "../components/componentsForm/Certifications";
 
 const listCard = ref([
     { textLink: 'personal infomation', active: true },

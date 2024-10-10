@@ -328,7 +328,7 @@ body .paddingPageProfile {
 
 // end page Profile All
 // start Page Profile navbarSide
-body div div div div div .linkPhoto {
+body div div div div div div .linkPhoto {
     width: 40px;
     bottom: -22px;
     left: 20px;
@@ -427,6 +427,20 @@ body div div div div div form div div .textAreaPlaceholder {
 body div div div div div form div div .inputConfirm:hover {
     background-color: $colorWhite !important;
     color: $colorGreen !important;
+}
+
+.sizeLabel {
+    font-size: 12px;
+    color: $colorBlack;
+}
+
+.inputBox {
+    width: 20px;
+    height: auto;
+}
+
+.modal-footer {
+    border: 0 !important;
 }
 
 // end page Profile Center

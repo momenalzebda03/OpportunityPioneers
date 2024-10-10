@@ -23,8 +23,10 @@
             </nav>
             <centerProjects v-if="listCard[0].active" />
             <centerExperience v-if="listCard[1].active" />
+            <!-- <centerExperience v-if="listCard[1].active" @open-modal="openModal('experience')" /> -->
             <centerCertifical v-if="listCard[2].active" />
             <centerDrafts v-if="listCard[3].active" />
+            <!-- <componentModal :activeForm="activeForm" :showModal="showModal" @close-modal="closeModal" /> -->
         </div>
     </div>
 </template>
@@ -35,6 +37,10 @@ import centerProjects from "../componentCenterProfile/centerProjects";
 import centerExperience from "../componentCenterProfile/centerExperience";
 import centerCertifical from "../componentCenterProfile/centerCertifications";
 import centerDrafts from "../componentCenterProfile/centerDrafts";
+// import componentModal from "../componentCenterProfile/compnentModal";
+
+// const showModal = ref(false);
+// const activeForm = ref('');
 
 const listCard = ref([
     { textLink: 'projects', active: true },
@@ -48,4 +54,13 @@ const setActive = (index) => {
         item.active = (i === index);
     });
 };
+
+// const openModal = (formType) => {
+//     activeForm.value = formType;
+//     showModal.value = true;
+// };
+
+// const closeModal = () => {
+//     showModal.value = false;
+// };
 </script>

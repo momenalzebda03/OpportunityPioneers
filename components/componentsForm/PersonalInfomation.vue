@@ -5,9 +5,11 @@
             <div class="mt-5 text-center">
                 <div class="d-flex flex-column position-relative align-items-center">
                     <img src="/assets/images/user.png" alt="">
-                    <router-link to="">
-                        <img src="/assets/images/photo.png" alt="" class="position-absolute linkPhoto linkPhotoForm">
-                    </router-link>
+                    <div @click="triggerFileInput">
+                        <img src="/assets/images/photo.png" alt=""
+                            class="position-absolute linkPhoto linkPhotoForm imageMouse">
+                        <input type="file" ref="fileInput" class="d-none" @change="handleFileChange" />
+                    </div>
                 </div>
                 <form action="" method="" class="mt-4">
                     <div class="d-flex flex-column gap-3">
@@ -83,10 +85,29 @@
                         </div>
                     </div>
                     <div class="text-end mt-3">
-                        <router-link to="" class="btn btn-success inputConfirm px-4 py-2">save</router-link>
+                        <input type="submit" class="btn btn-success inputConfirm px-4 py-2" value="save" />
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const fileInput = ref(null);
+
+const triggerFileInput = () => {
+    if (fileInput.value) {
+        fileInput.value.click();
+    }
+};
+
+const handleFileChange = (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        console.log('Selected file:', files[0]);
+    }
+};
+</script>
