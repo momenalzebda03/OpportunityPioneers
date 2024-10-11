@@ -66,6 +66,10 @@ label {
     font-weight: bold;
 }
 
+.modal-footer {
+    border: 0 !important;
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -191,11 +195,11 @@ body ul .lineLast {
     background-color: $colorLast;
 }
 
-body ul .lineLast.activeEmail.active {
-    background-color: $colorGreen;
+body ul li div .lineLast.activeEmail.active {
+    background-color: $colorGreen !important;
 }
 
-body ul li.activeEmail.active::after {
+body ul li div .lineLast.activeEmail.active::after {
     content: url('/assets/images/checkTrue.png') !important;
     width: 0;
     height: 0;
@@ -243,19 +247,19 @@ body div form div div .labelVaild::before {
     font-size: 17px;
 }
 
-.imageWidthInput {
+body .divChildSelect div div form div .rowChild div div div .imageWidthInput {
     top: 12px;
     left: 7px;
     width: 23px;
 }
 
-.imageWidthInputOverflow {
+body .divChildSelect div div form div .rowChild div div div .imageWidthInputOverflow {
     top: 12px;
     left: 90%;
     width: 23px;
 }
 
-.imageWidthInputOverflow1 {
+body .divChildSelect div div form div .rowChild div div div .imageWidthInputOverflow1 {
     top: 52px;
     left: 96%;
     width: 23px;
@@ -267,7 +271,7 @@ body div div form div .rowChild div div div .inputPaddingOverflow::placeholder {
 
 body div div form div .rowChild div div div .selectWaths {
     top: 3px;
-    left: -10px;
+    left: 0;
     border: transparent;
     border-right: 2px solid $colorPointLast;
     height: 89%;
@@ -280,20 +284,26 @@ body div div form div .rowChild div div div .selectWaths {
     }
 }
 
-.selectWaths {
+body div div form div .rowChild div div div .selectWaths {
     summary {
         list-style: none;
     }
 }
 
-.selectWathsWhats {
+body div div form div .rowChild div div div .selectWathsWhats {
+    left: -10px;
     padding: 0 17px;
 }
 
-.selectWaths::before {
+body div div form div .rowChild div div div .selectWathsWhats::before {
     content: url("/assets/images/arrowInput.png");
     position: absolute;
     right: 1px;
+    transition: 0.3s;
+}
+
+body div div form div .rowChild div div div .selectWathsWhats.open::before {
+    transform: rotate(179deg);
 }
 
 body div div form .rowChild div div div .selectWaths li {
@@ -425,29 +435,30 @@ body div div div div div form div div .inputConfirm:hover {
     color: $colorGreen !important;
 }
 
-.sizeLabel {
+body div .divBorderBottomProfileText div div div div div div form div div .sizeLabel {
     font-size: 12px;
     color: $colorBlack;
 }
 
-.inputBox {
+body div .divBorderBottomProfileText div div div div div div form div div .inputBox {
     width: 20px;
     height: auto;
 }
 
-.modal-footer {
-    border: 0 !important;
-}
-
 // end page Profile Center
 // start page create data user
-.linkPhotoForm {
+body div div div div div .linkPhotoForm {
     left: 395px !important;
 }
 
 // end page create data user
 // start media
 @media (max-width: 990px) {
+
+    body .divChildSelect {
+        padding-top: 130px !important;
+    }
+
     body .divHayThere {
         padding-top: 80px !important;
     }

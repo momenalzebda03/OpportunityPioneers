@@ -157,7 +157,8 @@
                                                 class="w-100 inputPadding inputPaddingSelect rounded-3 p-2 border border-2"
                                                 v-model="inputGange1" />
                                             <span v-if="containsAcshen1"></span>
-                                            <details v-else-if="!inputGange1"
+                                            <details v-else-if="!inputGange1" :class="{ open: arrowOpen }"
+                                                @click="toggleArrow"
                                                 class="position-absolute selectWaths selectWathsWhats py-1">
                                                 <summary>
                                                     <img src='/assets/images/palisten.png' alt="" />
@@ -263,11 +264,12 @@
                                         <label class="labelVaild fw-bold">Phone Number</label>
                                         <div class="mt-2 position-relative">
                                             <input type="text" placeholder="(+970)"
-                                                class="w-100 inputPadding rounded-3 p-2 border border-2"
+                                                class="w-100 inputPadding inputPaddingSelect rounded-3 p-2 border border-2"
                                                 v-model="inputGange1" />
                                             <span v-if="containsAcshen1"></span>
-                                            <details v-else-if="!inputGange1"
-                                                class="position-absolute selectWaths py-1 px-1">
+                                            <details v-else-if="!inputGange1" :class="{ open: arrowOpen }"
+                                                @click="toggleArrow"
+                                                class="position-absolute selectWaths selectWathsWhats py-1">
                                                 <summary>
                                                     <img src='/assets/images/palisten.png' alt="" />
                                                 </summary>
@@ -334,8 +336,6 @@ import componentCenter from "/components/componentCenter/componentCenter";
 import ComponentLast from "/components/componentCenter/componentLast";
 import { ref, computed } from 'vue';
 
-const index = ref(null);
-
 const options = ref([
     { value: '1', image: 'http://localhost:3000/_nuxt/assets/images/palisten.png' },
     { value: '2', image: 'http://localhost:3000/_nuxt/assets/images/arrow.png' }
@@ -345,6 +345,12 @@ const inputGange = ref('');
 const inputGange1 = ref('');
 const inputGange2 = ref('');
 const inputGange3 = ref('');
+const arrowOpen = ref(false);
+const index = ref(null);
+
+const toggleArrow = () => {
+    arrowOpen.value = !arrowOpen.value;
+};
 
 const containsAcshen = computed(() => {
     return inputGange.value.includes('acshen');

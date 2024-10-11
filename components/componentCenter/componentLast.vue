@@ -3,38 +3,30 @@
         <li class="col">
             <div class="d-flex flex-column gap-2">
                 <span class=" text-nowrap spanLast"
-                    :class="{ active: currentRoute === '/formCreateUser' || currentRoute == '/PageVerifyYourPhoneNumber', activeEmail: currentRoute === '/PageEmailAddressVerification' || currentRoute == '/PageVerifyYourPhoneNumber' }">Personal
+                    :class="{ active: currentRoute === '/PageEmailAddressVerification' || currentRoute === '/formCreateUser' || currentRoute == '/JobPreferences', activeEmail: currentRoute === '/PageEmailAddressVerification' || currentRoute == '/JobPreferences' }">Personal
                     Information</span>
                 <div class="lineLast ms-3 position-relative rounded-2"
-                    :class="{ active: currentRoute === '/formCreateUser' || currentRoute == '/PageVerifyYourPhoneNumber', activeEmail: currentRoute === '/PageEmailAddressVerification' || currentRoute == '/PageVerifyYourPhoneNumber' }">
+                    :class="{ active: currentRoute === '/PageEmailAddressVerification' || currentRoute === '/formCreateUser' || currentRoute == '/JobPreferences', activeEmail: currentRoute === '/PageEmailAddressVerification' || currentRoute == '/JobPreferences' }">
                 </div>
             </div>
         </li>
         <li class="col">
             <div class="d-flex flex-column gap-2">
                 <span class="text-nowrap spanLast"
-                    :class="{ active: currentRoute == '/PageVerifyYourPhoneNumber', activeEmail: currentRoute == '/PageVerifyYourPhoneNumber' }">Email
+                    :class="{ active: currentRoute == '/JobPreferences', activeEmail: currentRoute == '/JobPreferences' }">Email
                     Verification</span>
                 <div class="lineLast ms-3 position-relative rounded-2"
-                    :class="{ active: currentRoute == '/PageVerifyYourPhoneNumber', activeEmail: currentRoute == '/PageVerifyYourPhoneNumber' }">
+                    :class="{ active: currentRoute == '/JobPreferences', activeEmail: currentRoute == '/JobPreferences' }">
                 </div>
             </div>
         </li>
-        <!-- v-if="currentRoute == '/PageEmailAddressVerification' || currentRoute == '/PageVerifyYourPhoneNumber'" -->
-        <!-- :class="{ 'active': isActive }" -->
-        <li class="col" v-if="activeIndex !== 1 && activeIndex !== 2">
+        <li class="col"
+            v-if="activeIndex !== 1 && activeIndex !== 2 || currentRoute == '/PageEmailAddressVerification' || currentRoute == '/JobPreferences'">
             <div class="d-flex flex-column gap-2">
                 <span class="text-nowrap spanLast">Job Preferences</span>
                 <div class="lineLast ms-3 position-relative rounded-2"></div>
             </div>
         </li>
-        <!-- <li class="col"
-            v-if="currentRoute == '/PageEmailAddressVerification' || currentRoute == '/PageVerifyYourPhoneNumber'">
-            <div class=" d-flex flex-column gap-2">
-                <span class="text-nowrap spanLast">Job Preferences</span>
-                <div class="lineLast ms-3 position-relative rounded-2"></div>
-            </div>
-        </li> -->
     </ul>
 </template>
 

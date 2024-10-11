@@ -2,7 +2,7 @@ export default {
   css: ["/assets/scss/main.scss", "bootstrap/dist/css/bootstrap.css"],
   app: {
     head: {
-      title: "OPPORTUNITYPLONEERS",
+      title: "OPPORTUNITY PLONEERS",
 
       link: [
         {

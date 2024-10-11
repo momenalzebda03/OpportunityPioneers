@@ -8,11 +8,11 @@
             <ComponentLast />
             <div class="text-center mt-5">
                 <img src="/assets/images/smsNotification.png" alt="">
-                <componentText></componentText>
+                <componentText />
             </div>
             <componentCenterInputs />
             <div class="d-flex justify-content-end mt-5">
-                <router-link to="/PageVerifyYourPhoneNumber" class="border ButtonContinue rounded-1">
+                <router-link to="/JobPreferences" class="border ButtonContinue rounded-1">
                     <span class="fw-bold spanContinue">Continue</span>
                 </router-link>
             </div>

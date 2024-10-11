@@ -17,6 +17,6 @@ const currentRoute = computed(() => route.path);
 const ApiText = [
     { url: "/", title: "Hey there, What brings you here today?", text: "Please choose the option that best describes you to proceed with the sign-up process." },
     { url: "/PageEmailAddressVerification", title: "Email Address Verification", text: "We have sent a verification code to your email address. Please enter the code in the box below to verify your email." },
-    { url: "/PageVerifyYourPhoneNumber", title: "Verify Your Phone Number", text: "We have sent a verification code to your phone number via SMS. Please enter the code in the box below to verify your phone number." },
+    { url: "/JobPreferences", title: "Job Preferences", text: "Providing details about your needs will help us find job opportunities worldwide that are specifically tailored to your expertise and career goals." },
 ];
 </script>

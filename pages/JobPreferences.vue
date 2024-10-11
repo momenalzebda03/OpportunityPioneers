@@ -7,10 +7,11 @@
             </button>
             <ComponentLast />
             <div class="text-center mt-5">
-                <img src="/assets/images/MessageText.png" alt="">
-                <componentText></componentText>
+                <componentText />
             </div>
-            <componentCenterInputs />
+            <div>
+                <p>welcome</p>
+            </div>
             <div class="d-flex justify-content-end mt-5">
                 <router-link to="/userProfile" class="border ButtonContinue rounded-1">
                     <span class="fw-bold spanContinue">Continue</span>
@@ -25,7 +26,6 @@
 import ComponentCenter from "/components/componentCenter/componentCenter.vue";
 import ComponentLast from "/components/componentCenter/componentLast";
 import componentText from "/components/componentCenter/textComponent";
-import componentCenterInputs from "/components/componentCenter/componentInputs";
 
 const router = useRouter();
 const goBack = () => {

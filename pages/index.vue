@@ -28,9 +28,10 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const isClient = ref(false);
 import componentCenter from "/components/componentCenter/componentCenter";
 import ComponentCenterText from "/components/componentCenter/textComponent";
+
+const isClient = ref(false);
 
 const listCard = ref([
     { titleNavbar: "Job Seeker", srcImage: "http://localhost:3000/_nuxt/assets/images/job.png?t=1728137159158", activeComponent: false },
