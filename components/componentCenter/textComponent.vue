@@ -1,12 +1,12 @@
 <template>
     <div v-for="(item, index) in ApiText" :key="index">
-        <div class="text-center d-flex flex-column gap-2" v-if="currentRoute == item.url">
+        <div class="text-center d-flex flex-column gap-2" v-if="currentRoute === item.url">
             <h1 class="fs-3 fw-bold">{{ item.title }}</h1>
             <h2 class="fs-6 hChild">{{ item.text }}</h2>
         </div>
     </div>
 </template>
-  
+
 <script setup>
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
@@ -16,10 +16,7 @@ const currentRoute = computed(() => route.path);
 
 const ApiText = [
     { url: "/", title: "Hey there, What brings you here today?", text: "Please choose the option that best describes you to proceed with the sign-up process." },
-    { url: "/pageSignUpJobSeeker", title: "Sign up as Job Seeker", text: "Please choose the option that best describes you to proceed with the sign-up process." },
-    { url: "/pageSignUpSupportingInitiative", title: "Sign up as Supporting Initiative", text: "Please choose the option that best describes you to proceed with the sign-up process." },
-    { url: "/pageSignUpEmployee", title: "Sign up as Employer", text: "Please choose the option that best describes you to proceed with the sign-up process." },
     { url: "/PageEmailAddressVerification", title: "Email Address Verification", text: "We have sent a verification code to your email address. Please enter the code in the box below to verify your email." },
     { url: "/PageVerifyYourPhoneNumber", title: "Verify Your Phone Number", text: "We have sent a verification code to your phone number via SMS. Please enter the code in the box below to verify your phone number." },
 ];
-</script>  
+</script>

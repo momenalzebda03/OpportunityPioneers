@@ -39,15 +39,10 @@ const listCard = ref([
 ]);
 
 const getRouterLink = () => {
-    const urlMap = [
-        "/pageSignUpJobSeeker",
-        "/pageSignUpEmployee",
-        "/pageSignUpSupportingInitiative"
-    ];
     const activeElement = listCard.value.find(element => element.activeComponent);
     if (activeElement) {
         const idActive = listCard.value.indexOf(activeElement);
-        return urlMap[idActive] || '/';
+        return { name: 'formCreateUser', params: { index: idActive } }
     }
     return '/';
 };
@@ -60,6 +55,6 @@ const toggleActiveState = (index) => {
     listCard.value.forEach((checkList, idx) => {
         checkList.activeComponent = idx === index;
     });
+    localStorage.setItem('selectedIndex', index);
 };
-
 </script>

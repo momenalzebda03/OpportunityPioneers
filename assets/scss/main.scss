@@ -50,6 +50,10 @@ ul {
     padding-left: 27px;
 }
 
+.inputPaddingSelect::placeholder {
+    padding-left: 47px !important;
+}
+
 .rowChild {
     row-gap: 25px;
 }
@@ -257,13 +261,13 @@ body div form div div .labelVaild::before {
     width: 23px;
 }
 
-body div form div .rowChild div div div .inputPaddingOverflow::placeholder {
+body div div form div .rowChild div div div .inputPaddingOverflow::placeholder {
     padding-left: 0;
 }
 
-body div form div .rowChild div div div .selectWaths {
+body div div form div .rowChild div div div .selectWaths {
     top: 3px;
-    left: 2px;
+    left: -10px;
     border: transparent;
     border-right: 2px solid $colorPointLast;
     height: 89%;
@@ -276,11 +280,23 @@ body div form div .rowChild div div div .selectWaths {
     }
 }
 
-body div form .rowChild div div div .selectWaths summary {
-    list-style: none;
+.selectWaths {
+    summary {
+        list-style: none;
+    }
 }
 
-body div form .rowChild div div div .selectWaths li {
+.selectWathsWhats {
+    padding: 0 17px;
+}
+
+.selectWaths::before {
+    content: url("/assets/images/arrowInput.png");
+    position: absolute;
+    right: 1px;
+}
+
+body div div form .rowChild div div div .selectWaths li {
     list-style: none;
 }
 
