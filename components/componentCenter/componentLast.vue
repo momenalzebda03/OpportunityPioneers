@@ -1,5 +1,5 @@
 <template>
-    <ul class="row p-0 mt-4">
+    <ul class="row p-0 mt-4 gap-3 gap-md-0">
         <li class="col">
             <div class="d-flex flex-column gap-2">
                 <span class=" text-nowrap spanLast"
@@ -20,13 +20,19 @@
                 </div>
             </div>
         </li>
-        <li class="col"
-            v-if="activeIndex !== 1 && activeIndex !== 2 || currentRoute == '/PageEmailAddressVerification' || currentRoute == '/JobPreferences'">
+        <li class="col" v-if="activeIndex !== 1 && activeIndex !== 2">
             <div class="d-flex flex-column gap-2">
                 <span class="text-nowrap spanLast">Job Preferences</span>
                 <div class="lineLast ms-3 position-relative rounded-2"></div>
             </div>
         </li>
+        <!-- <li class="col"
+            v-if="activeIndex !== 1 && activeIndex !== 2 || currentRoute == '/PageEmailAddressVerification' || currentRoute == '/JobPreferences'">
+            <div class="d-flex flex-column gap-2">
+                <span class="text-nowrap spanLast">Job Preferences</span>
+                <div class="lineLast ms-3 position-relative rounded-2"></div>
+            </div>
+        </li> -->
     </ul>
 </template>
 

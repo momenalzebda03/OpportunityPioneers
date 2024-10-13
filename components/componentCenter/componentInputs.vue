@@ -17,6 +17,10 @@ const inputClasses = ref(['borderColorNormal', 'borderColorNormal', 'borderColor
 const updateClass = (index) => {
     const value = inputValues.value[index];
 
+    if (value == '') {
+        console.log("not value");
+    }
+
     if (isNaN(value) || value == '') {
         inputClasses.value[index] = 'borderColorNormal';
     } else if (value == '8') {

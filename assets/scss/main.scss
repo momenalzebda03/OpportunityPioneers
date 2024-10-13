@@ -259,7 +259,7 @@ body .divChildSelect div div form div .rowChild div div div .imageWidthInputOver
     width: 23px;
 }
 
-body .divChildSelect div div form div .rowChild div div div .imageWidthInputOverflow1 {
+body div div div form div div .imageWidthInputOverflow1 {
     top: 52px;
     left: 96%;
     width: 23px;
@@ -452,6 +452,24 @@ body div div div div div .linkPhotoForm {
 }
 
 // end page create data user
+// start page componentsForm
+.rowChild {
+    div:last-child {
+        .linkConnectedProfile {
+            color: $colorRed !important;
+        }
+    }
+}
+
+.rowChild {
+    div:nth-child(2) {
+        .linkConnectedProfile {
+            color: $colorGreen !important;
+        }
+    }
+}
+
+// start page componentsForm
 // start media
 @media (max-width: 990px) {
 
@@ -489,8 +507,12 @@ body div div div div div .linkPhotoForm {
         margin-left: 0 !important;
     }
 
-    .linkPhotoForm {
+    body div div div div div .linkPhotoForm {
         left: 130px !important;
+    }
+
+    body div div div div div div .linkPhoto {
+        left: 44% !important;
     }
 }
 

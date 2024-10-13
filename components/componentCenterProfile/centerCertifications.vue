@@ -2,7 +2,7 @@
     <div class="mx-3 d-flex flex-column gap-4">
         <div class="d-flex align-items-center justify-content-between mt-3 pb-3 divBorderBottomProfileText">
             <h2 class="mt-3 fw-bold fs-6">Certifications</h2>
-            <ComponentModal />
+            <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal" />
         </div>
         <!-- <div>
             <div class="modal fade" tabindex="-1" v-if="showModal" @click.self="closeModal">
@@ -171,8 +171,6 @@
 </template>
 
 <script setup>
-import ComponentModal from "../componentCenterProfile/compnentModal.vue";
-
 const arrayExerience = ref([
     { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
     { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
