@@ -1,5 +1,5 @@
 <template>
-    <div class="border border-1 rounded-3 py-4">
+    <div class="border border-1 rounded-3 divPaddingSideBarCompany">
         <div class="container py-3">
             <div class="d-flex flex-column gap-5 divSidePar">
                 <div>
@@ -59,22 +59,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-
-const fileInput = ref(null);
-
-const triggerFileInput = () => {
-    if (fileInput.value) {
-        fileInput.value.click();
-    }
-};
-
-const handleFileChange = (event) => {
-    const files = event.target.files;
-    if (files.length > 0) {
-        console.log('Selected file:', files[0]);
-    }
-};
-</script>

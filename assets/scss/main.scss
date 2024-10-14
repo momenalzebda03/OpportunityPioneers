@@ -40,6 +40,7 @@ ul {
 
 .ButtonContinue:hover {
     background-color: $colorGreen !important;
+    color: $colorWhite !important;
 
     span {
         color: $colorWhite !important;
@@ -114,6 +115,9 @@ body nav div div div div .imageSearch {
     left: 22px;
 }
 
+.arrowOverflow {
+    top: 55px !important;
+}
 // end navbar User Profile
 // start navbar child profile
 body nav div div ul li .linkColorNavbarProfile {
@@ -123,7 +127,7 @@ body nav div div ul li .linkColorNavbarProfile {
 body nav div div ul li .linkColorNavbarProfile.active,
 body nav div div ul li .linkColorNavbarProfile:hover {
     color: $colorBlack;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 2px solid $colorBlack;
 }
 
@@ -538,6 +542,10 @@ body div form div div .select-open.arrow {
     width: 230px;
 }
 
+.divAddNewButtonOverflow1 {
+    width: 300px;
+}
+
 .imageYay {
     width: 13px;
 }
@@ -548,6 +556,36 @@ body div form div div .select-open.arrow {
 
 .listColor {
     color: $colorNavbarChildProfile;
+}
+
+.divPaddingSideBarCompany {
+    padding: 7% 0;
+}
+
+.imageSearch::before {
+    content: url("/assets/images/search.png");
+    position: absolute;
+    left: 7px;
+    top: 10px;
+}
+
+.paddingInputSearch {
+    padding-left: 35px;
+}
+
+.spanPLacholdere {
+    font-size: 14px;
+    color: $colorNavbarChildProfile;
+}
+
+.backgroundSkills {
+    padding: 4px;
+    background-color: $colorSkills;
+}
+
+.divSkillsGreen {
+    width: 70px;
+    background-color: $colorGreen;
 }
 
 // end company profile

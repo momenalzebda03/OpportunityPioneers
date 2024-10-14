@@ -39,7 +39,7 @@
                             v-model="inputGange" />
                     </div>
                 </div>
-                <ul class="row mt-3 listNoneMobile">
+                <ul class="row mt-3 listNoneMobile align-items-center">
                     <li class="col-lg-4">
                         <router-link to="">
                             <img src="/assets/images/massage.png" alt="">
@@ -52,7 +52,8 @@
                     </li>
                     <li class="col-lg-4">
                         <router-link to="/pageCreateDataUser">
-                            <img src="/assets/images/user.png" alt="" class="w-100">
+                            <img src="/assets/images/imageCompanyNavbar.png" alt="" class="w-100">
+                            <!-- <img src="/assets/images/user.png" alt="" class="w-100"> -->
                         </router-link>
                     </li>
                 </ul>

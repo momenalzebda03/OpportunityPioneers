@@ -10,7 +10,7 @@
         </div>
         <div class="mt-3" v-for="test in 3" :key="test">
             <div class="d-flex gap-3 align-items-center justify-content-between border border-1 p-3 rounded-2">
-                <div>
+                <div class="w-100">
                     <div class="d-flex flex-column flex-md-row gap-3 align-items-start align-items-md-center">
                         <span class="fw-bold">Senior UX / UI Designer-Cairo, Egypt</span>
                         <router-link to=""
@@ -31,7 +31,7 @@
                             </router-link>
                         </li>
                     </ul>
-                    <div class="d-flex gap-2">
+                    <div class="d-flex flex-column flex-md-row gap-2">
                         <span class="fw-bold">skills:</span>
                         <ul class="px-0 d-flex gap-2 listColor my-0">
                             <li>JavaScript (Basic)</li>

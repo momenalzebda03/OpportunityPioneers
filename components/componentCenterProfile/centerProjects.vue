@@ -2,8 +2,9 @@
     <div class="mx-3 d-flex flex-column gap-4">
         <div class="d-flex align-items-center justify-content-between mt-3 pb-3 divBorderBottomProfileText">
             <h2 class="mt-3 fw-bold fs-6">projects</h2>
-            <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal" />
-            <div class="modal fade" tabindex="-1">
+            <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" />
+            <!-- <img src="/assets/images/plus.png" alt="Open Modal" class="imageMouse" @click="openModal" /> -->
+            <!-- <div class="modal fade" tabindex="-1">
                 <div class="modal-dialog shadow-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -93,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="row rowChild">
             <div class="col-md-6 col-lg-4" v-for="(item, index) in apiImage" :key="index">

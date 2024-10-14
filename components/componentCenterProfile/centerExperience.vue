@@ -23,27 +23,31 @@
                                             <span>Helper Place holder</span>
                                         </div>
                                         <div class="d-flex w-100 gap-4">
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <label for="">Employment Type</label>
-                                                    <label for="" class="fs-5 text-danger mt-2">*</label>
-                                                </div>
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                            <div class="position-relative w-100">
+                                                <label for="">Employment Type</label>
+                                                <select class="mt-2 rounded-3 p-2 border border-2 w-100"
+                                                    :class="['selectJobPreferences', { 'select-open': isOpen }]"
+                                                    @focus="isOpen = true" @blur="isOpen = false">
                                                     <option value="">content</option>
-                                                    <option value="">content</option>
+                                                    <option value="role1">content</option>
+                                                    <option value="role2">content</option>
                                                 </select>
-                                                <span>Helper Place holder</span>
+                                                <div class="position-absolute arrow arrowOverflow"
+                                                    :class="{ 'select-open': isOpen }">
+                                                </div>
                                             </div>
-                                            <div class="d-flex flex-column gap-1 w-100">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <label for="">Employment Type</label>
-                                                    <label for="" class="fs-5 text-danger mt-2">*</label>
-                                                </div>
-                                                <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                            <div class="position-relative w-100">
+                                                <label for="">Employment Type</label>
+                                                <select class="mt-2 rounded-3 p-2 border border-2 w-100"
+                                                    :class="['selectJobPreferences', { 'select-open': isOpen }]"
+                                                    @focus="isOpen = true" @blur="isOpen = false">
                                                     <option value="">content</option>
-                                                    <option value="">content</option>
+                                                    <option value="role1">content</option>
+                                                    <option value="role2">content</option>
                                                 </select>
-                                                <span>Helper Place holder</span>
+                                                <div class="position-absolute arrow arrowOverflow"
+                                                    :class="{ 'select-open': isOpen }">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-column gap-1">
@@ -149,9 +153,6 @@
                     <div @click="openModalDelete">
                         <img src="/assets/images/delete.png" alt="" class="d-none">
                     </div>
-                    <!-- <div @click="openModalDelete(item.key)">
-                        <img src="/assets/images/delete.png" alt="" class="d-none">
-                    </div> -->
                 </div>
                 <div class="modal fade delete" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -170,7 +171,6 @@
                             <div class="modal-footer gap-3">
                                 <button type="button" class="fw-bold border border-0 bg-transparent colorProfile"
                                     @click="closeModalDelete">Cancel</button>
-                                <!-- <button type="button" class="btn btn-danger" @click="confirmDelete">Delete</button> -->
                                 <button type="button" class="btn btn-danger"
                                     @click="functionDeleteKey(item, key)">Delete</button>
                             </div>
@@ -184,6 +184,7 @@
 
 <script setup>
 import { ref, nextTick } from 'vue';
+const isOpen = ref(false);
 
 const arrayExerience = ref([
     { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer0', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
@@ -195,17 +196,16 @@ const arrayExerience = ref([
 ]);
 
 const functionDeleteKey = () => {
-    // arrayExerience.value = arrayExerience.value.filter(item => item.key !== key);
-    const modalElement = document.querySelector('.modal');
+    const modalElement = document.querySelector('.modal.fade.delete');
     const modal = bootstrap.Modal.getInstance(modalElement);
+
     if (modal) {
         modal.hide();
     }
-    showModal.value = false;
+    arrayExerience.value = arrayExerience.value.filter(item => item.key !== key);
 };
 
 const showModal = ref(false);
-const showModalDelete = ref(false);
 
 const openModal = () => {
     showModal.value = true;
@@ -223,39 +223,23 @@ const closeModal = () => {
     if (modal) {
         modal.hide();
     }
-    nextTick(() => {
-        const secondModalElement = document.querySelector('.modal.fade');
-        const secondModal = new bootstrap.Modal(secondModalElement);
-        secondModal.show();
-    });
 };
 
 const closeModalDelete = () => {
-    const modalElement = document.querySelector('.modal');
+    const modalElement = document.querySelector('.modal.fade.delete');
     const modal = bootstrap.Modal.getInstance(modalElement);
+
     if (modal) {
         modal.hide();
     }
-    showModal.value = false;
 }
 
 const openModalDelete = () => {
-    // keyToDelete.value = key; // Store the key to delete
-    // const modalElement = document.getElementById('exampleModalCenter');
-    // const modal = new bootstrap.Modal(modalElement);
-    // modal.show();
-    showModalDelete.value = true;
+    showModal.value = true;
     nextTick(() => {
         const modalElement = document.querySelector('.modal.fade.delete');
         const modal = new bootstrap.Modal(modalElement);
         modal.show();
     });
 }
-
-// const confirmDelete = () => {
-//     if (keyToDelete.value !== null) {
-//         arrayExperience.value = arrayExperience.value.filter(item => item.key !== keyToDelete.value);
-//     }
-//     closeModalDelete(); // Close the modal after deletion
-// };
 </script>

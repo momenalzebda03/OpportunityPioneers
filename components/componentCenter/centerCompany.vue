@@ -22,9 +22,9 @@
                 </div>
             </nav>
             <centerJobs v-if="listCard[0].active" />
-            <!-- <centerExperience v-if="listCard[1].active" />
-            <centerCertifical v-if="listCard[2].active" />
-            <centerDrafts v-if="listCard[3].active" /> -->
+            <centerClosedJiob v-if="listCard[1].active" />
+            <freelancerProject v-if="listCard[2].active" />
+            <!--<centerDrafts v-if="listCard[3].active" /> -->
         </div>
     </div>
 </template>
@@ -32,8 +32,8 @@
 <script setup>
 import { ref } from 'vue';
 import centerJobs from "../componentCenterCompany/centerJobs";
-// import centerExperience from "../componentCenterProfile/centerExperience";
-// import centerCertifical from "../componentCenterProfile/centerCertifications";
+import centerClosedJiob from "../componentCenterCompany/centerClosedJob";
+import freelancerProject from "../componentCenterCompany/freelanceProject";
 // import centerDrafts from "../componentCenterProfile/centerDrafts";
 
 const listCard = ref([

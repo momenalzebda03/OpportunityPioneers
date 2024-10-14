@@ -37,7 +37,7 @@
                     </div>
                     <span>Helper Place holder</span>
                     <div class="text-end">
-                        <router-link to="/userProfile" class="border ButtonContinue rounded-1">
+                        <router-link :to="navigateTo" class="border ButtonContinue rounded-1">
                             <span class="fw-bold spanContinue">submit</span>
                         </router-link>
                     </div>
@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import ComponentCenter from "/components/componentCenter/componentCenter.vue";
 import ComponentLast from "/components/componentCenter/componentLast";
 import componentText from "/components/componentCenter/textComponent";
@@ -61,18 +61,9 @@ const goBack = () => {
     router.go(-1);
 };
 
-onMounted(() => {
+const navigateTo = computed(() => {
     const storedIndex = localStorage.getItem('selectedIndex');
     storedIndex !== null ? activeIndex.value = Number(storedIndex) : '';
-    // if (storedIndex == 0) {
-    //     console.log(`welcome ${url}`);
-    //     // const url = ref("/userProfile");
-    // } else if (storedIndex == 1) {
-    //     console.log(`welcome ${url}`);
-    //     // const url = ref("/userProfile");
-    // } else if (storedIndex == 2) {
-    //     console.log(`welcome ${url}`);
-    //     // const url = ref("/companyProfile");
-    // }
-})
+    return storedIndex == '0' ? '/companyProfile' : '/userProfile';
+});
 </script>
