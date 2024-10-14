@@ -70,6 +70,19 @@ label {
     border: 0 !important;
 }
 
+.inputBox {
+    width: 20px;
+    height: auto;
+}
+
+.divSidePar {
+    div:last-child {
+        hr {
+            display: none;
+        }
+    }
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -310,6 +323,13 @@ body div div form .rowChild div div div .selectWaths li {
     list-style: none;
 }
 
+body ul .listStyles {
+    transition: 0.5s;
+    flex: 0 !important;
+    width: 0 !important;
+    transition: 0.5s;
+}
+
 // end SignUp
 // start checkEmail
 body div form div .inputWidthEmail {
@@ -440,11 +460,6 @@ body div .divBorderBottomProfileText div div div div div div form div div .sizeL
     color: $colorBlack;
 }
 
-body div .divBorderBottomProfileText div div div div div div form div div .inputBox {
-    width: 20px;
-    height: auto;
-}
-
 // end page Profile Center
 // start page create data user
 body div div div div div .linkPhotoForm {
@@ -453,7 +468,11 @@ body div div div div div .linkPhotoForm {
 
 // end page create data user
 // start page componentsForm
-.rowChild {
+body div div ul li .rowChild {
+    border: 2px solid $colorBorder;
+}
+
+body div div ul li .rowChild {
     div:last-child {
         .linkConnectedProfile {
             color: $colorRed !important;
@@ -461,15 +480,77 @@ body div div div div div .linkPhotoForm {
     }
 }
 
-.rowChild {
+body div div ul li .rowChild {
     div:nth-child(2) {
+        .linkConnectedProfile {
+            border: 2px solid $colorBorder;
+            color: $colorGray !important;
+        }
+    }
+}
+
+body div div ul li .rowChild {
+    div:nth-child(3) {
         .linkConnectedProfile {
             color: $colorGreen !important;
         }
     }
 }
 
-// start page componentsForm
+body div form div div .selectJobPreferences {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 30px;
+}
+
+body div form div div .arrow {
+    background-image: url("/assets/images/ArrowDopdown.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.5s;
+    width: 24px;
+    height: 24px;
+}
+
+body div form div div .select-open.arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+// end page componentsForm
+// start compoany Profile
+.spanDesign {
+    color: $colorGray;
+}
+
+.gapText {
+    gap: 140px;
+}
+
+.divAddNewButton {
+    width: 120px;
+    background-color: $colorGreen;
+}
+
+.divAddNewButtonOverflow {
+    width: 230px;
+}
+
+.imageYay {
+    width: 13px;
+}
+
+.divList {
+    background-color: $colorList;
+}
+
+.listColor {
+    color: $colorNavbarChildProfile;
+}
+
+// end company profile
 // start media
 @media (max-width: 990px) {
 
@@ -513,6 +594,18 @@ body div div div div div .linkPhotoForm {
 
     body div div div div div div .linkPhoto {
         left: 44% !important;
+    }
+
+    body div div ul li .rowChild {
+        border: 0 solid $colorBorder;
+    }
+
+    body div div ul li .rowChild {
+        div:nth-child(2) {
+            .linkConnectedProfile {
+                border: 0 solid $colorBorder;
+            }
+        }
     }
 }
 

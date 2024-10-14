@@ -165,7 +165,6 @@ const closeModal = () => {
 };
 
 const saveChanges = () => {
-    // Implement your save logic here
     closeModal();
 };
 </script>

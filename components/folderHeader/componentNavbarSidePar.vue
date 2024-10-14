@@ -1,7 +1,7 @@
 <template>
     <div class="border border-1 rounded-3 py-4">
         <div class="container">
-            <div class="d-flex flex-column gap-2">
+            <div class="d-flex flex-column gap-2 divSidePar">
                 <div>
                     <router-link to="" type="button" class="btn btn-outline-success px-4 py-1">Export</router-link>
                     <div class="my-3 container d-flex gap-2 align-items-center">

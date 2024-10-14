@@ -146,8 +146,35 @@
                             </div>
                         </div>
                     </div>
-                    <div @click="functionDeleteKey(item.key)">
+                    <div @click="openModalDelete">
                         <img src="/assets/images/delete.png" alt="" class="d-none">
+                    </div>
+                    <!-- <div @click="openModalDelete(item.key)">
+                        <img src="/assets/images/delete.png" alt="" class="d-none">
+                    </div> -->
+                </div>
+                <div class="modal fade delete" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-between">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Delete Experience</h5>
+                                <button type="button" class="btn-close" @click="closeModalDelete"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span>Are you sure you want to delete this experience? This action is permanent and cannot
+                                    be undone. Deleting this experience will remove it from your profile and any associated
+                                    records.</span>
+                            </div>
+                            <div class="modal-footer gap-3">
+                                <button type="button" class="fw-bold border border-0 bg-transparent colorProfile"
+                                    @click="closeModalDelete">Cancel</button>
+                                <!-- <button type="button" class="btn btn-danger" @click="confirmDelete">Delete</button> -->
+                                <button type="button" class="btn btn-danger"
+                                    @click="functionDeleteKey(item, key)">Delete</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -159,30 +186,16 @@
 import { ref, nextTick } from 'vue';
 
 const arrayExerience = ref([
-    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer0', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer1', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer2', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer3', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer4', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer5', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
 ]);
 
-const functionDeleteKey = (key) => {
-    arrayExerience.value = arrayExerience.value.filter(item => item.key !== key);
-};
-
-const showModal = ref(false);
-
-const openModal = () => {
-    showModal.value = true;
-    nextTick(() => {
-        const modalElement = document.querySelector('.modal');
-        const modal = new bootstrap.Modal(modalElement);
-        modal.show();
-    });
-};
-
-const closeModal = () => {
+const functionDeleteKey = () => {
+    // arrayExerience.value = arrayExerience.value.filter(item => item.key !== key);
     const modalElement = document.querySelector('.modal');
     const modal = bootstrap.Modal.getInstance(modalElement);
     if (modal) {
@@ -191,8 +204,58 @@ const closeModal = () => {
     showModal.value = false;
 };
 
-const saveChanges = () => {
-    // Implement your save logic here
-    closeModal();
+const showModal = ref(false);
+const showModalDelete = ref(false);
+
+const openModal = () => {
+    showModal.value = true;
+    nextTick(() => {
+        const modalElement = document.querySelector('.modal.fade');
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    });
 };
+
+const closeModal = () => {
+    const modalElement = document.querySelector('.modal.fade');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+
+    if (modal) {
+        modal.hide();
+    }
+    nextTick(() => {
+        const secondModalElement = document.querySelector('.modal.fade');
+        const secondModal = new bootstrap.Modal(secondModalElement);
+        secondModal.show();
+    });
+};
+
+const closeModalDelete = () => {
+    const modalElement = document.querySelector('.modal');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) {
+        modal.hide();
+    }
+    showModal.value = false;
+}
+
+const openModalDelete = () => {
+    // keyToDelete.value = key; // Store the key to delete
+    // const modalElement = document.getElementById('exampleModalCenter');
+    // const modal = new bootstrap.Modal(modalElement);
+    // modal.show();
+    showModalDelete.value = true;
+    nextTick(() => {
+        const modalElement = document.querySelector('.modal.fade.delete');
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    });
+}
+
+// const confirmDelete = () => {
+//     if (keyToDelete.value !== null) {
+//         arrayExperience.value = arrayExperience.value.filter(item => item.key !== keyToDelete.value);
+//     }
+//     closeModalDelete(); // Close the modal after deletion
+// };
 </script>

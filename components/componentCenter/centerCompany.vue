@@ -21,26 +21,26 @@
                     </div>
                 </div>
             </nav>
-            <centerProjects v-if="listCard[0].active" />
-            <centerExperience v-if="listCard[1].active" />
+            <centerJobs v-if="listCard[0].active" />
+            <!-- <centerExperience v-if="listCard[1].active" />
             <centerCertifical v-if="listCard[2].active" />
-            <centerDrafts v-if="listCard[3].active" />
+            <centerDrafts v-if="listCard[3].active" /> -->
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import centerProjects from "../componentCenterProfile/centerProjects";
-import centerExperience from "../componentCenterProfile/centerExperience";
-import centerCertifical from "../componentCenterProfile/centerCertifications";
-import centerDrafts from "../componentCenterProfile/centerDrafts";
+import centerJobs from "../componentCenterCompany/centerJobs";
+// import centerExperience from "../componentCenterProfile/centerExperience";
+// import centerCertifical from "../componentCenterProfile/centerCertifications";
+// import centerDrafts from "../componentCenterProfile/centerDrafts";
 
 const listCard = ref([
-    { textLink: 'Projects', active: true },
-    { textLink: 'Experience', active: false },
-    { textLink: 'Certifications', active: false },
-    { textLink: 'Drafts', active: false }
+    { textLink: 'jobs', active: true },
+    { textLink: 'closed jobs', active: false },
+    { textLink: 'freelance projects', active: false },
+    { textLink: 'settings', active: false }
 ]);
 
 const activeForm = ref('');

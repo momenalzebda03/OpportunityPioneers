@@ -16,17 +16,7 @@ const inputClasses = ref(['borderColorNormal', 'borderColorNormal', 'borderColor
 
 const updateClass = (index) => {
     const value = inputValues.value[index];
-
-    if (value == '') {
-        console.log("not value");
-    }
-
-    if (isNaN(value) || value == '') {
-        inputClasses.value[index] = 'borderColorNormal';
-    } else if (value == '8') {
-        inputClasses.value[index] = 'inputWidthEmailTrue';
-    } else {
-        inputClasses.value[index] = 'inputWidthEmailFalse';
-    }
+    localStorage.setItem('valueInputs', value);
+    isNaN(value) || value == '' ? inputClasses.value[index] = 'borderColorNormal' : value == '8' ? inputClasses.value[index] = 'inputWidthEmailTrue' : inputClasses.value[index] = 'inputWidthEmailFalse';
 };
 </script>
