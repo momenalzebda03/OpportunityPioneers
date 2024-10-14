@@ -39,14 +39,14 @@
                                             <div class="position-relative w-100">
                                                 <label for="">Employment Type</label>
                                                 <select class="mt-2 rounded-3 p-2 border border-2 w-100"
-                                                    :class="['selectJobPreferences', { 'select-open': isOpen }]"
-                                                    @focus="isOpen = true" @blur="isOpen = false">
+                                                    :class="['selectJobPreferences', { 'select-open': isOpen1 }]"
+                                                    @focus="isOpen1 = true" @blur="isOpen1 = false">
                                                     <option value="">content</option>
                                                     <option value="role1">content</option>
                                                     <option value="role2">content</option>
                                                 </select>
                                                 <div class="position-absolute arrow arrowOverflow"
-                                                    :class="{ 'select-open': isOpen }">
+                                                    :class="{ 'select-open': isOpen1 }">
                                                 </div>
                                             </div>
                                         </div>
@@ -131,8 +131,8 @@
                 </div>
             </div>
         </div>
-        <ul class="px-0">
-            <li class="d-flex gap-3 align-items-center" v-for="item in arrayExerience" :key="item.key">
+        <ul>
+            <li class="d-flex gap-3 align-items-center" v-for="item in arrayExperience" :key="item.key">
                 <div>
                     <img src="/assets/images/arrow.png" alt="">
                 </div>
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div @click="openModalDelete">
+                    <div @click="openModalDelete(item.key)">
                         <img src="/assets/images/delete.png" alt="" class="d-none">
                     </div>
                 </div>
@@ -172,7 +172,7 @@
                                 <button type="button" class="fw-bold border border-0 bg-transparent colorProfile"
                                     @click="closeModalDelete">Cancel</button>
                                 <button type="button" class="btn btn-danger"
-                                    @click="functionDeleteKey(item, key)">Delete</button>
+                                    @click="functionDeleteKey(deleteKey)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -185,27 +185,18 @@
 <script setup>
 import { ref, nextTick } from 'vue';
 const isOpen = ref(false);
-
-const arrayExerience = ref([
-    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer0', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer1', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer2', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer3', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer4', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer5', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
-]);
-
-const functionDeleteKey = () => {
-    const modalElement = document.querySelector('.modal.fade.delete');
-    const modal = bootstrap.Modal.getInstance(modalElement);
-
-    if (modal) {
-        modal.hide();
-    }
-    arrayExerience.value = arrayExerience.value.filter(item => item.key !== key);
-};
-
+const isOpen1 = ref(false);
 const showModal = ref(false);
+let deleteKey = ref(null);
+
+const arrayExperience = ref([
+    { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 0', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 1, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 1', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 2, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 2', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 3, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 3', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 4', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+    { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/spotify.png', title: 'Senior UX / UI Designer 5', spanTitle: 'Spotify', span: 'Aug 2019 - Dec 2020' },
+]);
 
 const openModal = () => {
     showModal.value = true;
@@ -225,21 +216,27 @@ const closeModal = () => {
     }
 };
 
-const closeModalDelete = () => {
-    const modalElement = document.querySelector('.modal.fade.delete');
-    const modal = bootstrap.Modal.getInstance(modalElement);
-
-    if (modal) {
-        modal.hide();
-    }
-}
-
-const openModalDelete = () => {
-    showModal.value = true;
+const openModalDelete = (key) => {
+    deleteKey.value = key;
     nextTick(() => {
         const modalElement = document.querySelector('.modal.fade.delete');
         const modal = new bootstrap.Modal(modalElement);
         modal.show();
     });
-}
+};
+
+const closeModalDelete = () => {
+    const modalElement = document.querySelector('.modal.fade.delete');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) {
+        modal.hide();
+    }
+};
+
+const functionDeleteKey = (key) => {
+    if (key !== null) {
+        arrayExperience.value = arrayExperience.value.filter(item => item.key !== key);
+    }
+    closeModalDelete();
+};
 </script>

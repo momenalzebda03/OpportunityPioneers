@@ -96,54 +96,67 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Project Description</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
+                                    <div class="d-flex w-100 gap-4">
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <label for="">salary</label>
+                                                <label for="" class="fs-5 text-danger mt-2">*</label>
+                                            </div>
+                                            <div class="d-flex w-100 gap-3">
+                                                <div class="d-flex flex-column gap-1 w-100">
+                                                    <div class="d-flex gap-2">
+                                                        <div
+                                                            class="d-flex gap-1 align-items-center custom-radio position-relative">
+                                                            <input type="radio" id="radioMonthly" name="paymentOption"
+                                                                value="monthly">
+                                                            <label for="radioMonthly" class="labelSize ms-2">Monthly</label>
+                                                        </div>
+                                                        <input type="text" placeholder="$250"
+                                                            class="w-100 rounded-3 p-2 border blackPlashorlder">
+                                                    </div>
+                                                    <span>Helper Placeholder</span>
+                                                </div>
+                                                <div class="d-flex flex-column gap-1 w-100">
+                                                    <div class="d-flex gap-2">
+                                                        <div
+                                                            class="d-flex gap-1 align-items-center custom-radio position-relative">
+                                                            <input type="radio" id="radioAnnually" name="paymentOption"
+                                                                value="annually">
+                                                            <label for="radioAnnually" class="labelSize ms-2">hourly</label>
+                                                        </div>
+                                                        <input type="text" placeholder="$25"
+                                                            class="w-100 rounded-3 p-2 border blackPlashorlder">
+                                                    </div>
+                                                    <span>Helper Placeholder</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <label for="">Project Content</label>
-                                            <label for="" class="fs-5 text-danger mt-2">*</label>
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <label for="">End Date</label>
+                                                <label for="" class="fs-5 text-danger mt-2">*</label>
+                                            </div>
+                                            <div class="d-flex w-100 gap-3">
+                                                <div class="d-flex flex-column gap-1 w-100">
+                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                        <option value="">Year</option>
+                                                        <option value="">Year</option>
+                                                    </select>
+                                                    <span>Helper Place holder</span>
+                                                </div>
+                                                <div class="d-flex flex-column gap-1 w-100">
+                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
+                                                        <option value="">Month</option>
+                                                        <option value="">Month</option>
+                                                    </select>
+                                                    <span>Helper Place holder</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="position-relative">
-                                            <textarea name="" id="" cols="100" rows="4"
-                                                class="textArea rounded-3 p-2 border">
-                                            </textarea>
-                                            <ul class="position-absolute d-flex align-items-center divImageTextErea gap-4">
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Gallery.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Videocam.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/Link.png" alt="" class="w-100">
-                                                </li>
-                                                <li class="imageMouse">
-                                                    <img src="/assets/images/File.png" alt="" class="w-100">
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <span>Helper Place holder</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-1 position-relative">
-                                        <textarea name="" id="" cols="100" rows="6" value=""
-                                            placeholder="Your Uploaded Content Will display here"
-                                            class="textArea textAreaPlaceholder rounded-3 p-2">
-                                        </textarea>
                                     </div>
                                 </div>
-                                <div class="modal-footer d-flex justify-content-between">
-                                    <div>
-                                        <router-link to="" class="linkGreen fw-bold">Preview</router-link>
-                                    </div>
+                                <div class="modal-footer d-flex justify-content-end">
                                     <div class="d-flex gap-3">
-                                        <input type="submit" class="btn btn-outline-success" @click="closeModal"
-                                            value="Save as draft" />
                                         <input type="submit" class="btn btn-success inputConfirm" @click="saveChanges"
                                             value="Confirm" />
                                     </div>

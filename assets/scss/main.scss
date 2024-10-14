@@ -115,9 +115,10 @@ body nav div div div div .imageSearch {
     left: 22px;
 }
 
-.arrowOverflow {
+body div .divBorderBottomProfileText div div div div div form div div .arrowOverflow {
     top: 55px !important;
 }
+
 // end navbar User Profile
 // start navbar child profile
 body nav div div ul li .linkColorNavbarProfile {
@@ -525,66 +526,103 @@ body div form div div .select-open.arrow {
 
 // end page componentsForm
 // start compoany Profile
-.spanDesign {
+body .paddingPageProfile div div div div div div div .spanDesign {
     color: $colorGray;
 }
 
-.gapText {
+body .paddingPageProfile div div div div div div .gapText {
     gap: 140px;
 }
 
-.divAddNewButton {
+body .paddingPageProfile div div div div div .divAddNewButton {
     width: 120px;
     background-color: $colorGreen;
 }
 
-.divAddNewButtonOverflow {
+body .paddingPageProfile div div div div div .divAddNewButtonOverflow {
     width: 230px;
 }
 
-.divAddNewButtonOverflow1 {
+body .paddingPageProfile div div div div div .divAddNewButtonOverflow1 {
     width: 300px;
 }
 
-.imageYay {
+body div div div div div .imageYay {
     width: 13px;
 }
 
-.divList {
+body div div div div ul li .divList {
     background-color: $colorList;
 }
 
-.listColor {
+body div div div div div .listColor {
     color: $colorNavbarChildProfile;
 }
 
-.divPaddingSideBarCompany {
+body .divPaddingSideBarCompany {
     padding: 7% 0;
 }
 
-.imageSearch::before {
+body div div div .imageSearch::before {
     content: url("/assets/images/search.png");
     position: absolute;
     left: 7px;
     top: 10px;
 }
 
-.paddingInputSearch {
+body div div div .imageSearch .paddingInputSearch {
     padding-left: 35px;
 }
 
-.spanPLacholdere {
+body .paddingPageProfile div div div div div form div div div div .spanPLacholdere {
     font-size: 14px;
     color: $colorNavbarChildProfile;
 }
 
-.backgroundSkills {
+body .paddingPageProfile div div div div div form div div div div .backgroundSkills {
     padding: 4px;
     background-color: $colorSkills;
 }
 
-.divSkillsGreen {
+body .paddingPageProfile div div div div div form div div div div div .divSkillsGreen {
     width: 70px;
+    background-color: $colorGreen;
+}
+
+.labelSize {
+    font-size: 12px;
+}
+
+.blackPlashorlder::placeholder {
+    color: $colorBlack;
+}
+
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+.custom-radio label::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    bottom: 8px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    background-color: $colorBorder;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+}
+
+.custom-radio input[type="radio"]:checked+label::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    bottom: 12.7px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     background-color: $colorGreen;
 }
 
