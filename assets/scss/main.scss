@@ -84,6 +84,10 @@ label {
     }
 }
 
+.labelSize {
+    font-size: 12px;
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -520,8 +524,50 @@ body div form div div .arrow {
     height: 24px;
 }
 
-body div form div div .select-open.arrow {
+body div form div div .selectOpen.arrow {
     transform: translateY(-50%) rotate(180deg);
+}
+
+body .paddingPageProfile div div div div div form div div div .customRadio input[type="radio"] {
+    display: none;
+}
+
+body .paddingPageProfile div div div div div form div div div .customRadio label::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    bottom: -8px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    background-color: $colorBorder;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+}
+
+body .paddingPageProfile div div div div div form div div div .customRadio input[type="radio"]:checked+label::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    bottom: 12.7px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $colorGreen;
+}
+
+body .paddingPageProfile div div div div div form div div div div div .arrowOverlfow {
+    top: 34% !important;
+}
+
+body .paddingPageProfile div div div div div form div div div .customRadioOverflow label::before {
+    bottom: -4px;
+}
+
+body .paddingPageProfile div div div div div form div div div .customRadioOverflow input[type="radio"]:checked+label::after {
+    bottom: 0.7px;
+    left: -5.4px;
 }
 
 // end page componentsForm
@@ -580,8 +626,12 @@ body .paddingPageProfile div div div div div form div div div div .spanPLacholde
 }
 
 body .paddingPageProfile div div div div div form div div div div .backgroundSkills {
-    padding: 4px;
+    min-width: 70px;
     background-color: $colorSkills;
+}
+
+body .paddingPageProfile div div div div div form div div div .divKills {
+    height: 130px;
 }
 
 body .paddingPageProfile div div div div div form div div div div div .divSkillsGreen {
@@ -589,19 +639,15 @@ body .paddingPageProfile div div div div div form div div div div div .divSkills
     background-color: $colorGreen;
 }
 
-.labelSize {
-    font-size: 12px;
-}
-
-.blackPlashorlder::placeholder {
+body div div div div form div div div div div div .blackPlashorlder::placeholder {
     color: $colorBlack;
 }
 
-.custom-radio input[type="radio"] {
+body div div div div form div div div div div div .custom-radio input[type="radio"] {
     display: none;
 }
 
-.custom-radio label::before {
+body div div div div form div div div div div div .custom-radio label::before {
     content: '';
     position: absolute;
     left: -8px;
@@ -614,7 +660,7 @@ body .paddingPageProfile div div div div div form div div div div div .divSkills
     border-radius: 50%;
 }
 
-.custom-radio input[type="radio"]:checked+label::after {
+body div div div div form div div div div div div .custom-radio input[type="radio"]:checked+label::after {
     content: '';
     position: absolute;
     left: -6px;
@@ -624,6 +670,16 @@ body .paddingPageProfile div div div div div form div div div div div .divSkills
     height: 8px;
     border-radius: 50%;
     background-color: $colorGreen;
+}
+
+body div div div div form div div .textAreaPlaceholderOverflow::placeholder {
+    left: 37% !important;
+}
+
+body div div div div .modalContentSmoll {
+    min-width: 0 !important;
+    width: 80%;
+    margin-left: 70px !important;
 }
 
 // end company profile

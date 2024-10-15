@@ -21,10 +21,11 @@
                     </div>
                 </div>
             </nav>
+            <componentModalJob v-if="listCard[0].active" />
             <centerJobs v-if="listCard[0].active" />
             <centerClosedJiob v-if="listCard[1].active" />
+            <componentModalFreeLacner v-if="listCard[2].active" />
             <freelancerProject v-if="listCard[2].active" />
-            <!--<centerDrafts v-if="listCard[3].active" /> -->
         </div>
     </div>
 </template>
@@ -34,7 +35,8 @@ import { ref } from 'vue';
 import centerJobs from "../componentCenterCompany/centerJobs";
 import centerClosedJiob from "../componentCenterCompany/centerClosedJob";
 import freelancerProject from "../componentCenterCompany/freelanceProject";
-// import centerDrafts from "../componentCenterProfile/centerDrafts";
+import componentModalJob from "../componentCenterCompany/componentModal/modalAddNewJob";
+import componentModalFreeLacner from "../componentCenterCompany/componentModal/modalAddNewFreelancer";
 
 const listCard = ref([
     { textLink: 'jobs', active: true },

@@ -50,10 +50,49 @@
                         <span class="colorProfile">October 6, 2023</span>
                     </div>
                 </div>
-                <router-link to="">
+                <div @click="openModal" class="imageMouse">
                     <img src="/assets/images/menu.png" alt="">
-                </router-link>
+                </div>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content modalContentSmoll">
+                            <div class="modal-header border border-bottom-0 text-center justify-content-center">
+                                <h5 class="modal-title" id="exampleModalLongTitle">You are reposting this job.<br>
+                                    Do you want to edit it?</h5>
+                            </div>
+                            <div class="modal-footer justify-content-center" @click="closeModal">
+                                <div class="w-100 d-flex gap-3">
+                                    <button type="button" class="btn btn-success w-100">Edit</button>
+                                    <button type="button" class="btn btn-outline-danger w-100">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+const showModal = ref(false);
+
+const openModal = () => {
+    showModal.value = true;
+    nextTick(() => {
+        const modalElement = document.querySelector('.modal');
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    });
+};
+
+const closeModal = () => {
+    const modalElement = document.querySelector('.modal');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) {
+        modal.hide();
+    }
+    showModal.value = false;
+};
+</script>
