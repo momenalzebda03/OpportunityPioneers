@@ -137,20 +137,24 @@
                                                 <label for="" class="fs-5 text-danger mt-2">*</label>
                                             </div>
                                             <div class="d-flex w-100 gap-3">
-                                                <div class="d-flex flex-column gap-1 w-100">
-                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                        <option value="">Year</option>
-                                                        <option value="">Year</option>
+                                                <div class="position-relative w-100">
+                                                    <select class="rounded-3 p-2 border border-2 w-100"
+                                                        :class="['selectJobPreferences', { 'select-open': isOpen }]"
+                                                        @focus="isOpen = true" @blur="isOpen = false">
+                                                        <option value="">Select role</option>
+                                                        <option value="role1">Role 1</option>
+                                                        <option value="role2">Role 2</option>
                                                     </select>
-                                                    <span>Helper Place holder</span>
+                                                    <div class="position-absolute arrow" :class="{ 'select-open': isOpen }">
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex flex-column gap-1 w-100">
+                                                <!-- <div class="d-flex flex-column gap-1 w-100">
                                                     <select name="" id="" class="w-100 rounded-3 p-2 border">
                                                         <option value="">Month</option>
                                                         <option value="">Month</option>
                                                     </select>
                                                     <span>Helper Place holder</span>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -184,6 +188,7 @@ import centerCompany from "/components/componentCenter/centerCompany";
 import { ref, nextTick } from 'vue';
 
 const showModal = ref(false);
+const isOpen = ref(false);
 
 const openModal = () => {
     showModal.value = true;

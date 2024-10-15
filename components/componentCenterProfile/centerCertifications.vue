@@ -124,10 +124,9 @@
                                             <span>Helper Place holder</span>
                                         </div>
                                         <div class="d-flex flex-column gap-1 position-relative">
-                                            <textarea name="" id="" cols="100" rows="6" value=""
+                                            <textarea name="" id="" cols="100" rows="6"
                                                 placeholder="Your Uploaded Content Will display here"
-                                                class="textArea textAreaPlaceholder rounded-3 p-2">
-                                        </textarea>
+                                                class="textArea textAreaPlaceholder rounded-3 p-2"></textarea>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
