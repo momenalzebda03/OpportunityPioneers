@@ -631,12 +631,17 @@ body .paddingPageProfile div div div div div form div div div div .backgroundSki
 }
 
 body .paddingPageProfile div div div div div form div div div .divKills {
-    height: 130px;
+    max-height: 130px;
 }
 
 body .paddingPageProfile div div div div div form div div div div div .divSkillsGreen {
-    width: 70px;
+    min-width: 73px;
     background-color: $colorGreen;
+    gap: 10px;
+}
+
+body .paddingPageProfile div div div div div form div div div .divKillsOverflow {
+    max-height: 88px;
 }
 
 body div div div div form div div div div div div .blackPlashorlder::placeholder {

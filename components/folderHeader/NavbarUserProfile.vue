@@ -52,8 +52,9 @@
                     </li>
                     <li class="col-lg-4">
                         <router-link to="/pageCreateDataUser">
-                            <img src="/assets/images/imageCompanyNavbar.png" alt="" class="w-100">
-                            <!-- <img src="/assets/images/user.png" alt="" class="w-100"> -->
+                            <img src="/assets/images/user.png" alt="" class="w-100" v-if="currentRoute == '/userProfile'">
+                            <img src="/assets/images/imageCompanyNavbar.png" alt="" class="w-100"
+                                v-if="currentRoute == '/companyProfile'">
                         </router-link>
                     </li>
                 </ul>
@@ -64,8 +65,11 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 
 const inputGange = ref('');
+const route = useRoute();
+const currentRoute = computed(() => route.path);
 
 const containsAcshen = computed(() => {
     return inputGange.value.includes('acshen');

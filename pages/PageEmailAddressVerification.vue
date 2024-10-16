@@ -19,7 +19,6 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-5">
-                    <!-- go to JobPreferences -->
                     <input type="submit" class="border ButtonContinue rounded-1" value="Continue" @click="inputSubmit" />
                 </div>
             </form>
@@ -36,9 +35,6 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const goBack = () => {
-    router.go(-1);
-};
 
 const inputValues = ref(['', '', '', '', '']);
 const inputClasses = ref(['borderColorNormal', 'borderColorNormal', 'borderColorNormal', 'borderColorNormal', 'borderColorNormal']);
@@ -56,5 +52,10 @@ const inputSubmit = () => {
             inputClasses.value[index] = 'inputWidthEmailTrue';
         }
     });
+    // router.push('/JobPreferences');
+};
+
+const goBack = () => {
+    router.go(-1);
 };
 </script>

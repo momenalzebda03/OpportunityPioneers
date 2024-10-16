@@ -39,11 +39,17 @@ const listCard = ref([
     { titleNavbar: "Supporting Initiative", srcImage: "http://localhost:3000/_nuxt/assets/images/hart.png?t=1728137159158", activeComponent: false }
 ]);
 
+const toggleActiveState = (index) => {
+    listCard.value.forEach((checkList, idx) => {
+        checkList.activeComponent = idx == index;
+    });
+    localStorage.setItem('selectedIndex', index);
+};
+
 const getRouterLink = () => {
     const activeElement = listCard.value.find(element => element.activeComponent);
     if (activeElement) {
-        const idActive = listCard.value.indexOf(activeElement);
-        return { name: 'formCreateUser', params: { index: idActive } }
+        return { name: 'formCreateUser' }
     }
     return '/';
 };
@@ -51,11 +57,4 @@ const getRouterLink = () => {
 onMounted(() => {
     isClient.value = true;
 });
-
-const toggleActiveState = (index) => {
-    listCard.value.forEach((checkList, idx) => {
-        checkList.activeComponent = idx === index;
-    });
-    localStorage.setItem('selectedIndex', index);
-};
 </script>

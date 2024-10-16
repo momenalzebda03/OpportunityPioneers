@@ -31,21 +31,25 @@
                                     <label for="" class="fs-5 text-danger mt-2">*</label>
                                 </div>
                                 <div class="d-flex flex-column gap-0">
-                                    <div class="row w-100 mx-0 py-2 border border-2 rounded-3">
-                                        <div class="col mt-2 px-1">
-                                            <div
-                                                class="py-1 ps-1 text-white divSkillsGreen text-center rounded-3 d-flex align-items-center gap-2">
-                                                <span>UI/UX</span>
-                                                <img src="/assets/images/closeSkill.png" alt="" class="imageMouse">
+                                    <div class="py-2 px-1 border border-2 rounded-3 divKillsOverflow overflow-auto">
+                                        <div class="d-flex gap-1 flex-wrap">
+                                            <div v-for="(item, index) in loopSkills" :key="index">
+                                                <div v-if="item.active"
+                                                    class="text-center divSkillsGreen text-white rounded-3 p-1 d-flex align-items-center">
+                                                    <span>{{ item.titleSkill }}</span>
+                                                    <img src="/assets/images/closeSkill.png" alt="" class="imageMouse"
+                                                        @click="changeActive(index)">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="py-2 px-1 border border-2 border-top-0 rounded-3 divKills overflow-auto">
                                         <span class="spanPLacholdere">Suggested tags:</span>
                                         <div class="mt-2 d-flex gap-1 flex-wrap">
-                                            <div class="imageMouse text-center backgroundSkills rounded-3 mt-1 p-1"
-                                                v-for="test in 14" :key="test">
-                                                <span>UI/UX</span>
+                                            <div v-for="(item, index) in loopSkills" :key="index"
+                                                class="imageMouse text-center backgroundSkills rounded-3 mt-1 p-1"
+                                                @click="changeActive(index)">
+                                                <span>{{ item.titleSkill }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -178,8 +182,32 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const isOpen = ref(false);
 const isOpen1 = ref(false);
+
+const loopSkills = ref([
+    { key: 0, titleSkill: 'UX/UI', active: false },
+    { key: 1, titleSkill: 'UX/UI', active: false },
+    { key: 2, titleSkill: 'UX/UI', active: false },
+    { key: 3, titleSkill: 'UX/UI', active: false },
+    { key: 4, titleSkill: 'UX/UI', active: false },
+    { key: 5, titleSkill: 'UX/UI', active: false },
+    { key: 6, titleSkill: 'UX/UI', active: false },
+    { key: 7, titleSkill: 'UX/UI', active: false },
+    { key: 8, titleSkill: 'UX/UI', active: false },
+    { key: 9, titleSkill: 'UX/UI', active: false },
+    { key: 10, titleSkill: 'UX/UI', active: false },
+    { key: 11, titleSkill: 'UX/UI', active: false },
+    { key: 12, titleSkill: 'UX/UI', active: false },
+    { key: 13, titleSkill: 'UX/UI', active: false },
+    { key: 14, titleSkill: 'UX/UI', active: false }
+]);
+
+const changeActive = (index) => {
+    loopSkills.value[index].active = !loopSkills.value[index].active;
+};
 
 const closeModal = () => {
     const modalElement = document.querySelector('.modal');

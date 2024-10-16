@@ -49,7 +49,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import ComponentCenter from "/components/componentCenter/componentCenter.vue";
+import ComponentCenter from "/components/componentCenter/componentCenter";
 import ComponentLast from "/components/componentCenter/componentLast";
 import componentText from "/components/componentCenter/textComponent";
 
