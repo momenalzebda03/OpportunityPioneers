@@ -1,9 +1,9 @@
-<template>
+<!-- <template>
     <ul class="row p-0 mt-4 gap-3 gap-md-0">
         <li class="col">
             <div class="d-flex flex-column gap-2">
                 <span class="text-nowrap spanLast"
-                    :class="{ active: currentRoute == '/PageEmailAddressVerification' || currentRoute == '/formCreateUser' || currentRoute == '/JobPreferences', activeEmail: currentRoute == '/PageEmailAddressVerification' || currentRoute == '/JobPreferences' }">
+                    :class="{ active: currentRoute ==    '/PageEmailAddressVerification' || currentRoute == '/formCreateUser' || currentRoute == '/JobPreferences', activeEmail: currentRoute == '/PageEmailAddressVerification' || currentRoute == '/JobPreferences' }">
                     Personal Information
                 </span>
                 <div class="lineLast ms-3 position-relative rounded-2"
@@ -53,4 +53,4 @@ onMounted(() => {
         activeIndex.value = Number(storedIndex);
     }
 });
-</script>
+</script> -->

@@ -475,6 +475,27 @@ body div div div div div .linkPhotoForm {
     left: 395px !important;
 }
 
+.step-header {
+    transition: background-color 0.3s;
+}
+
+// .step-header.active {
+//     background-color: #007bff;
+//     color: white;
+// }
+
+.step-header.completed {
+    background-color: #28a745;
+    /* Completed step color */
+    color: white;
+}
+
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
 // end page create data user
 // start page componentsForm
 body div div ul li .rowChild {

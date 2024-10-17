@@ -1,7 +1,59 @@
 <template>
+    <div class="divChildSelect shadow" style="padding-top: 150px; max-width: 600px; margin: auto;">
+        <ul class="row p-0 mt-4 gap-3 gap-md-0">
+            <li class="col step" v-for="(item, index) in items" :key="index">
+                <div class="step-header d-flex flex-column gap-2"
+                    :class="{ active: currentStep == index, completed: currentStep > index }" @click="goToStep(index)">
+                    <span class="text-nowrap spanLast">
+                        {{ item }}
+                    </span>
+                    <div class="lineLast ms-3 position-relative rounded-2"></div>
+                </div>
+            </li>
+            <div class="navigation">
+                <button @click="prevStep" :disabled="currentStep == 0">Previous</button>
+                <button @click="nextStep" :disabled="currentStep >= items.length - 1">Next</button>
+            </div>
+        </ul>
+        <div v-if="currentStep == 0">
+            <p>Welcome to Step 1!</p>
+        </div>
+        <div v-if="currentStep == 1">
+            <p>Welcome to Step 2!</p>
+        </div>
+        <div v-if="currentStep == 2">
+            <p>Welcome to Step 3!</p>
+        </div>
+    </div>
+</template>
+  
+<script setup>
+import { ref } from 'vue';
+
+const currentStep = ref(0);
+const items = ['Personal Information', 'Email Verification', 'Job Preferences'];
+
+const nextStep = () => {
+    if (currentStep.value < items.length - 1) {
+        currentStep.value++;
+    }
+};
+
+const prevStep = () => {
+    if (currentStep.value > 0) {
+        currentStep.value--;
+    }
+};
+
+const goToStep = (index) => {
+    currentStep.value = index;
+};
+</script>
+
+<!-- <template>
     <div class="divChildSelect">
         <div v-if="index == 0">
-            <!-- start signUpSeeker  -->
+            start signUpSeeker 
             <componentCenter style="padding-top: 220px !important;">
                 <div class="container">
                     <router-link to="/">
@@ -95,8 +147,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3">
-                                    <!-- <input type="submit" class="border ButtonContinue rounded-1"
-                                value="Continue"> -->
+                                    <input type="submit" class="border ButtonContinue rounded-1"
+                                value="Continue">
                                     <router-link to="/PageEmailAddressVerification" class="border ButtonContinue rounded-1">
                                         <span class="fw-bold spanContinue">Continue</span>
                                     </router-link>
@@ -106,10 +158,10 @@
                     </form>
                 </div>
             </componentCenter>
-            <!-- end signUpSeeker -->
+            end signUpSeeker
         </div>
-        <div v-if="index == 1">
-            <!-- start signUpEmploeey -->
+<div v-if="index == 1">
+            start signUpEmploeey
             <componentCenter style="padding-top: 220px !important;">
                 <div class="container">
                     <router-link to="/">
@@ -117,13 +169,13 @@
                     </router-link>
                     <ComponentLast />
                 </div>
-                <div class="mt-5">
+<div class="mt-5">
                     <div class="text-center d-flex flex-column gap-2">
                         <h1 class="fs-3 fw-bold">Sign up as Supporting Initiative</h1>
                         <h2 class="fs-6 hChild">Please choose the option that best describes you to proceed with the sign-up
                             process.</h2>
                     </div>
-                    <form action="" method="get">
+<form action="" method="get">
                         <div class="mt-4 d-flex flex-column gap-4">
                             <div class="w-100 position-relative">
                                 <label class="labelVaild fw-bold">Full Name</label>
@@ -205,8 +257,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3">
-                                    <!-- <input type="submit" class="border ButtonContinue rounded-1"
-                                value="Continue"> -->
+                                    <input type="submit" class="border ButtonContinue rounded-1"
+                                value="Continue">
                                     <router-link to="/PageEmailAddressVerification" class="border ButtonContinue rounded-1">
                                         <span class="fw-bold spanContinue">Continue</span>
                                     </router-link>
@@ -216,10 +268,10 @@
                     </form>
                 </div>
             </componentCenter>
-            <!-- end signUpEmploeey -->
+            end signUpEmploeey
         </div>
-        <div v-if="index == 2">
-            <!-- start signUpSupporting -->
+<div v-if="index == 2">
+            start signUpSupporting
             <componentCenter style="padding-top: 220px !important;">
                 <div class="container">
                     <router-link to="/">
@@ -227,13 +279,13 @@
                     </router-link>
                     <ComponentLast />
                 </div>
-                <div class="mt-5">
+<div class="mt-5">
                     <div class="text-center d-flex flex-column gap-2">
                         <h1 class="fs-3 fw-bold">Sign up as Employer</h1>
                         <h2 class="fs-6 hChild">Please choose the option that best describes you to proceed with the sign-up
                             process.</h2>
                     </div>
-                    <form action="" method="get">
+<form action="" method="get">
                         <div class="mt-4 d-flex flex-column gap-4">
                             <div class="w-100 position-relative">
                                 <label class="labelVaild fw-bold">Full Name</label>
@@ -315,8 +367,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-3">
-                                    <!-- <input type="submit" class="border ButtonContinue rounded-1"
-                                value="Continue"> -->
+                                    <input type="submit" class="border ButtonContinue rounded-1"
+                                value="Continue">
                                     <router-link to="/PageEmailAddressVerification" class="border ButtonContinue rounded-1">
                                         <span class="fw-bold spanContinue">Continue</span>
                                     </router-link>
@@ -326,12 +378,12 @@
                     </form>
                 </div>
             </componentCenter>
-            <!-- end signUpSupporting -->
+            end signUpSupporting
         </div>
     </div>
-</template>
+</template> -->
 
-<script setup>
+<!-- <script setup>
 import componentCenter from "/components/componentCenter/componentCenter";
 import ComponentLast from "/components/componentCenter/componentLast";
 import { ref, computed } from 'vue';
@@ -374,4 +426,4 @@ onMounted(() => {
         index.value = Number(storedIndex);
     }
 });
-</script>
+</script> -->
