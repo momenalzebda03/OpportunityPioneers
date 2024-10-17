@@ -212,16 +212,16 @@ body .divHayThere div .divHayPerint div div .rowGapColumn ul .active {
 
 // end HayThere
 // start SignUp
-body ul .lineLast {
+.lineLast {
     height: 10px;
     background-color: $colorLast;
 }
 
-body ul li div .lineLast.activeEmail.active {
+.lineLast.activeEmail.active {
     background-color: $colorGreen !important;
 }
 
-body ul li div .lineLast.activeEmail.active::after {
+.lineLast.activeEmail.active::after {
     content: url('/assets/images/checkTrue.png') !important;
     width: 0;
     height: 0;
@@ -231,11 +231,11 @@ body ul li div .lineLast.activeEmail.active::after {
     z-index: 1;
 }
 
-body ul .lineLast.active::before {
-    background-color: $colorPoint;
+.lineLast.active {
+    background-color: $colorPointd;
 }
 
-body ul .lineLast::after {
+.lineLast::after {
     left: -20px;
     top: -2px;
     width: 16px;
@@ -243,7 +243,7 @@ body ul .lineLast::after {
     background-color: $colorPointd;
 }
 
-body ul .lineLast::before {
+.lineLast::before {
     left: -17.1px;
     top: 0.8px;
     width: 10px;
@@ -252,11 +252,11 @@ body ul .lineLast::before {
     z-index: 1;
 }
 
-body ul li .spanLast {
+li .spanLast {
     font-size: 15px;
 }
 
-body ul li .spanLast.active {
+li .spanLast.active {
     font-weight: bold;
 }
 
@@ -267,6 +267,10 @@ body div form div div .labelVaild::before {
     top: 8px;
     color: $colorRed;
     font-size: 17px;
+}
+
+body .divChildSelect {
+    transform: translateY(40px);
 }
 
 body .divChildSelect div div form div .rowChild div div div .imageWidthInput {
@@ -479,14 +483,8 @@ body div div div div div .linkPhotoForm {
     transition: background-color 0.3s;
 }
 
-// .step-header.active {
-//     background-color: #007bff;
-//     color: white;
-// }
-
 .step-header.completed {
     background-color: #28a745;
-    /* Completed step color */
     color: white;
 }
 
