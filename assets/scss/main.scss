@@ -24,6 +24,8 @@ ul {
     text-decoration: none;
     background-color: $colorGrayButton;
     padding: 13px 25px;
+    pointer-events: none;
+    opacity: 0.5;
 
     .spanContinue {
         color: $colorButton;
@@ -33,15 +35,8 @@ ul {
 .ButtonContinue.hoverable {
     background-color: $colorGreen !important;
     color: $colorWhite !important;
-
-    span {
-        color: $colorWhite !important;
-    }
-}
-
-.ButtonContinue:hover {
-    background-color: $colorGreen !important;
-    color: $colorWhite !important;
+    pointer-events: all;
+    opacity: 1;
 
     span {
         color: $colorWhite !important;
@@ -50,6 +45,10 @@ ul {
 
 .inputPadding::placeholder {
     padding-left: 27px;
+}
+
+.inputPaddingOverflowColor::placeholder {
+    color: $colorBlack;
 }
 
 .inputPaddingSelect::placeholder {
@@ -120,8 +119,49 @@ body nav div div div div .imageSearch {
     left: 22px;
 }
 
+body nav div div div div .imageSearchOverflow {
+    left: 23px;
+}
+
 body div .divBorderBottomProfileText div div div div div form div div .arrowOverflow {
     top: 55px !important;
+}
+
+body nav div div ul li div .divMessaging {
+    top: 20px;
+    right: -60px;
+    max-height: 0;
+    min-width: 380px;
+    transition: 1s;
+}
+
+body nav div div ul li div .divMessaging .hieght100 {
+    height: 320px;
+}
+
+body nav div div ul li div .divMessaging.activeMessaging {
+    max-height: 650px;
+    min-width: 380px;
+}
+
+body nav div div ul li div div div div .imgMessages {
+    right: 25px;
+    top: 13px;
+}
+
+body nav div div .listNoneMobile li div div div ul .listStyleHoverMessages::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 67px;
+    margin-top: -10px;
+    background-color: $colorHoverMessages;
+    transition: 0.7s;
+}
+
+body nav div div .listNoneMobile li div div div ul .listStyleHoverMessages:hover::before {
+    width: 100%;
+    background-color: $colorHoverMessages;
 }
 
 // end navbar User Profile

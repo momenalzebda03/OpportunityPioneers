@@ -16,7 +16,7 @@
                     </ul>
                     <div class="d-flex justify-content-end mt-3">
                         <router-link :to="getRouterLink()" class="border ButtonContinue rounded-1"
-                            :class="{ 'hoverable': listCard.some(item => item.activeComponent) }">
+                            :class="{ 'hoverable': listCard.some(item => item.activeComponent), 'disabled': !canContinue }">
                             <span class="fw-bold spanContinue">Continue</span>
                         </router-link>
                     </div>
@@ -32,6 +32,7 @@ import componentCenter from "/components/componentCenter/componentCenter";
 import ComponentCenterText from "/components/componentCenter/textComponent";
 
 const isClient = ref(false);
+const canContinue = ref(true);
 
 const listCard = ref([
     { titleNavbar: "Job Seeker", srcImage: "http://localhost:3000/_nuxt/assets/images/job.png?t=1728137159158", activeComponent: false },

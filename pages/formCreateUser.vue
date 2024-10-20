@@ -322,19 +322,21 @@
                 <div class="text-center mt-5">
                     <div class="text-center d-flex flex-column gap-2">
                         <h1 class="fs-3 fw-bold">Job Preferences</h1>
-                        <h2 class="fs-6 hChild">Providing details about your needs will help us find job opportunities
-                            worldwide that are specifically tailored to your expertise and career goals.</h2>
+                        <h2 class="fs-6 hChild">
+                            Providing details about your needs will help us find job opportunities worldwide that are
+                            specifically tailored to your expertise and career goals.
+                        </h2>
                     </div>
                 </div>
                 <form action="" method="" class="mt-3">
                     <span>Select Your Job Preference</span>
                     <div class="d-flex gap-4 mt-4">
                         <div class="d-flex gap-2">
-                            <input type="checkbox" class="inputBox" id="fullTime">
+                            <input type="checkbox" class="inputBox" id="fullTime" v-model="fullTime">
                             <label for="fullTime">full time</label>
                         </div>
                         <div class="d-flex gap-2">
-                            <input type="checkbox" class="inputBox" id="partTime">
+                            <input type="checkbox" class="inputBox" id="partTime" v-model="partTime">
                             <label for="partTime">part time</label>
                         </div>
                     </div>
@@ -345,8 +347,8 @@
                         </div>
                         <div class="position-relative">
                             <select class="rounded-3 p-2 border border-2 w-100"
-                                :class="['selectJobPreferences', { 'selectOpen': isOpen }]" @focus="isOpen = true"
-                                @blur="isOpen = false">
+                                :class="['selectJobPreferences', { 'selectOpen': isOpen }]" v-model="selectedRole"
+                                @focus="isOpen = true" @blur="isOpen = false">
                                 <option value="">Select role</option>
                                 <option value="role1">Role 1</option>
                                 <option value="role2">Role 2</option>
@@ -358,13 +360,10 @@
                 </form>
             </div>
             <div class="navigation justify-content-end">
-                <button class="border ButtonContinue rounded-1" value="Continue" @click="nextStep">
+                <button class="border ButtonContinue rounded-1" value="Continue" @click="nextStep"
+                    :class="{ 'hoverable': canContinue, 'disabled': !canContinue }" :disabled="!canContinue">
                     Continue
                 </button>
-                <!-- <button class="border ButtonContinue rounded-1" value="Continue" @click="nextStep"
-                    :disabled="currentStep >= items.length - 1">
-                    Continue
-                </button> -->
             </div>
         </componentCenter>
     </div>
@@ -388,6 +387,16 @@ const index = ref(null);
 const inputValues = ref(['', '', '', '', '']);
 const inputClasses = ref(['', '', '', '', '']);
 const activeIndex = ref(0);
+const fullTime = ref(false);
+const partTime = ref(false);
+const selectedRole = ref('');
+
+const canContinue = computed(() => {
+    if (fullTime.value || partTime.value && selectedRole.value !== '') {
+        console.log("welcome");
+    }
+    // return (fullTime.value || partTime.value) && selectedRole.value !== '';
+});
 
 const navigateTo = computed(() => {
     const storedIndex = localStorage.getItem('selectedIndex');
