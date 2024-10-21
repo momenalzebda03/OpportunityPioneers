@@ -69,8 +69,9 @@
                     <h2 class="fs-5 fw-bold mb-3">About</h2>
                     <div class="d-flex flex-column gap-2">
                         <span class="">Experienced UX/UI designer with 8 years in creating intuitive and engaging digital
-                            products. Proficient in user research, wireframing, prototyping, and testing.</span>
-                        <router-link to="" class="text-black text-decoration-none fw-bold">read more</router-link>
+                            products. Proficient in user research, wireframing, prototyping, and testing.<br><router-link
+                                to="" class="text-black text-decoration-none fw-bold">read
+                                more</router-link></span>
                     </div>
                     <hr>
                 </div>

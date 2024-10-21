@@ -39,12 +39,12 @@
                             v-model="inputGange" />
                     </div>
                 </div>
-                <ul class="row mt-3 listNoneMobile align-items-center">
-                    <li class="col-lg-4">
+                <ul class="row mt-2 mt-lg-3 align-items-center">
+                    <li class="col col-lg-4">
                         <div @click="functionBlockMassage" class="imageMouse">
                             <img src="/assets/images/massage.png" alt="">
                         </div>
-                        <div class="position-relative">
+                        <!-- <div class="position-relative">
                             <div class="position-absolute shadow rounded-3 overflow-hidden divMessaging bg-white"
                                 :class="{ 'activeMessaging': refMessaging }">
                                 <div class="pb-0 p-3">
@@ -56,8 +56,8 @@
                                     <h2 class="fw-bold fs-5">No messages yet</h2>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="position-relative">
+                        </div> -->
+                        <div class="position-relative">
                             <div class="position-absolute shadow rounded-3 overflow-auto divMessaging bg-white"
                                 :class="{ 'activeMessaging': refMessaging }">
                                 <div class="pb-0 p-3">
@@ -98,19 +98,20 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </li>
-                    <li class="col-lg-4">
+                    <li class="col col-lg-4">
                         <div>
                             <img src="/assets/images/bell.png" alt="">
                         </div>
                     </li>
-                    <li class="col-lg-4">
+                    <li class="col col-lg-4">
                         <router-link to="/pageCreateDataUser">
-                            <img src="/assets/images/user.png" alt="" class="w-100" v-if="currentRoute == '/userProfile'">
+                            <img src="/assets/images/user.png" alt="" class="imageWidth"
+                                v-if="currentRoute == '/userProfile' || currentRoute == '/pageCreateDataUser'">
                         </router-link>
-                        <router-link to="/">
-                            <img src="/assets/images/imageCompanyNavbar.png" alt="" class="w-100"
+                        <router-link to="/pageCreateDataCompany">
+                            <img src="/assets/images/imageCompanyNavbar.png" alt=""
                                 v-if="currentRoute == '/companyProfile'">
                         </router-link>
                     </li>
@@ -131,11 +132,7 @@ const currentRoute = computed(() => route.path);
 const refMessaging = ref(false);
 
 const functionBlockMassage = () => {
-    if (refMessaging.value == false) {
-        return refMessaging.value = true;
-    } else {
-        return refMessaging.value = false;
-    }
+    refMessaging.value == false ? refMessaging.value = true : refMessaging.value = false;
 }
 
 const containsAcshen = computed(() => {

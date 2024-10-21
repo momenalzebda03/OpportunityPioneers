@@ -26,7 +26,8 @@
                             <div class="w-100 position-relative">
                                 <label class="labelVaild fw-bold">Full Name</label>
                                 <div class="d-flex flex-column mt-2 gap-2">
-                                    <input type="text" placeholder="Content" class="rounded-3 p-2 border">
+                                    <input type="text" placeholder="Content" class="rounded-3 p-2 border"
+                                        v-model="fullName">
                                     <span>Helper Place holder</span>
                                 </div>
                             </div>
@@ -112,11 +113,30 @@
                     </div>
                     <form action="" method="get">
                         <div class="mt-4 d-flex flex-column gap-4">
-                            <div class="w-100 position-relative">
-                                <label class="labelVaild fw-bold">Full Name</label>
-                                <div class="d-flex flex-column mt-2 gap-2">
-                                    <input type="text" placeholder="Content" class="rounded-3 p-2 border">
-                                    <span>Helper Place holder</span>
+                            <div class="d-flex gap-3">
+                                <div class="w-100 position-relative">
+                                    <label class="labelVaild fw-bold">Full Name</label>
+                                    <div class="d-flex flex-column mt-2 gap-2">
+                                        <input type="text" placeholder="Content" class="rounded-3 p-2 border"
+                                            v-model="fullName">
+                                        <span>Helper Place holder</span>
+                                    </div>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <label class="labelVaild fw-bold">Country</label>
+                                    <div class="d-flex flex-column mt-2 gap-2">
+                                        <select class="rounded-3 p-2 border border-2 w-100"
+                                            :class="['selectJobPreferences', { 'selectOpen': isOpen }]"
+                                            @focus="isOpen = true" @blur="isOpen = false">
+                                            <option value="">content</option>
+                                            <option value="role1">content</option>
+                                            <option value="role2">content</option>
+                                        </select>
+                                        <div class="position-absolute arrow arrowOverflow"
+                                            :class="{ 'selectOpen': isOpen }">
+                                        </div>
+                                        <span>Helper Place holder</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row rowChild">
@@ -203,11 +223,30 @@
                     </div>
                     <form action="" method="get">
                         <div class="mt-4 d-flex flex-column gap-4">
-                            <div class="w-100 position-relative">
-                                <label class="labelVaild fw-bold">Full Name</label>
-                                <div class="d-flex flex-column mt-2 gap-2">
-                                    <input type="text" placeholder="Content" class="rounded-3 p-2 border">
-                                    <span>Helper Place holder</span>
+                            <div class="d-flex gap-3">
+                                <div class="w-100 position-relative">
+                                    <label class="labelVaild fw-bold">Full Name</label>
+                                    <div class="d-flex flex-column mt-2 gap-2">
+                                        <input type="text" placeholder="Content" class="rounded-3 p-2 border"
+                                            v-model="fullName">
+                                        <span>Helper Place holder</span>
+                                    </div>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <label class="labelVaild fw-bold">Country</label>
+                                    <div class="d-flex flex-column mt-2 gap-2">
+                                        <select class="rounded-3 p-2 border border-2 w-100"
+                                            :class="['selectJobPreferences', { 'selectOpen': isOpen }]"
+                                            @focus="isOpen = true" @blur="isOpen = false">
+                                            <option value="">content</option>
+                                            <option value="role1">content</option>
+                                            <option value="role2">content</option>
+                                        </select>
+                                        <div class="position-absolute arrow arrowOverflow"
+                                            :class="{ 'selectOpen': isOpen }">
+                                        </div>
+                                        <span>Helper Place holder</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row rowChild">
@@ -299,21 +338,12 @@
                 <form action="" method="get" class="mt-4 row gap-3 gap-md-0" @input="inputSubmit">
                     <div class="row gap-3 gap-lg-0">
                         <div class="col text-center" v-for="index in 5" :key="index">
-                            <input v-model="inputValues[index]" :class="[
-                                'rounded-3',
-                                'text-center',
-                                'inputWidthEmail',
-                                'pt-3',
-                                'pb-2',
-                                'fw-bold',
-                                'borderColorNormal',
-                                inputClasses[index],
-                                {
-                                    inputWidthEmailTrue: inputValues[index] == 8,
-                                    inputWidthEmailFalse: inputValues[index] > 8 || (inputValues[index] < 8 && inputValues[index] !== ''),
-                                    borderColorNormal: inputValues[index] == ''
-                                }
-                            ]" type="text" placeholder="*" maxlength="1" />
+                            <input v-model="inputValues[index - 1]" class="rounded-3 text-center pt-3 pb-2 fw-bold" :class="['inputWidthEmail', 'borderColorNormal', inputClasses[index - 1], {
+                                inputWidthEmailTrue: inputValues[index - 1] == 8,
+                                inputWidthEmailFalse: inputValues[index - 1] > 8 ||
+                                    (inputValues[index - 1]
+                                        < 8 && inputValues[index - 1] !== ''), borderColorNormal: inputValues[index - 1] == ''
+                            }]" type="text" placeholder="*" maxlength="1" />
                         </div>
                     </div>
                 </form>
@@ -346,9 +376,9 @@
                             <span class="fs-5 text-danger mt-1">*</span>
                         </div>
                         <div class="position-relative">
-                            <select class="rounded-3 p-2 border border-2 w-100"
-                                :class="['selectJobPreferences', { 'selectOpen': isOpen }]" v-model="selectedRole"
-                                @focus="isOpen = true" @blur="isOpen = false">
+                            <select v-model="selectedRole" class="rounded-3 p-2 border border-2 w-100"
+                                :class="['selectJobPreferences', { 'selectOpen': isOpen }]" @focus="isOpen = true"
+                                @blur="isOpen = false">
                                 <option value="">Select role</option>
                                 <option value="role1">Role 1</option>
                                 <option value="role2">Role 2</option>
@@ -359,7 +389,7 @@
                     </div>
                 </form>
             </div>
-            <div class="navigation justify-content-end">
+            <div class="d-flex navigation justify-content-end">
                 <button class="border ButtonContinue rounded-1" value="Continue" @click="nextStep"
                     :class="{ 'hoverable': canContinue, 'disabled': !canContinue }" :disabled="!canContinue">
                     Continue
@@ -378,60 +408,68 @@ const router = useRouter();
 const isOpen = ref(false);
 const currentStep = ref(0);
 const items = ref([]);
+const fullName = ref('');
 const inputGange = ref('');
 const inputGange1 = ref('');
 const inputGange2 = ref('');
 const inputGange3 = ref('');
 const arrowOpen = ref(false);
 const index = ref(null);
-const inputValues = ref(['', '', '', '', '']);
-const inputClasses = ref(['', '', '', '', '']);
+const inputValues = ref(new Array(5).fill(''));
+const inputClasses = ref(new Array(5).fill(''));
 const activeIndex = ref(0);
-const fullTime = ref(false);
-const partTime = ref(false);
+const hasSubmitted = ref(false);
+const checkNewValues = ref(false);
 const selectedRole = ref('');
+const fullTime = ref('');
+const partTime = ref('');
+
+watch(inputValues, (newValues) => {
+    checkNewValues.value = newValues.every(input => input === '8');
+}, { deep: true });
 
 const canContinue = computed(() => {
-    if (fullTime.value || partTime.value && selectedRole.value !== '') {
-        console.log("welcome");
+    if (hasSubmitted.value) {
+        return false;
     }
-    // return (fullTime.value || partTime.value) && selectedRole.value !== '';
+
+    const jobPreferenceSelected = fullTime.value || partTime.value;
+    const roleSelected = selectedRole !== '';
+
+    const allInputsFilled = fullName.value && inputGange.value && inputGange1.value && inputGange2.value && inputGange3.value || checkNewValues.value;
+    const canProceed = allInputsFilled || checkNewValues.value || jobPreferenceSelected && roleSelected;
+    return canProceed;
 });
 
 const navigateTo = computed(() => {
     const storedIndex = localStorage.getItem('selectedIndex');
-    if (storedIndex !== null) {
-        activeIndex.value = Number(storedIndex);
-    }
+    storedIndex !== null ? activeIndex.value = Number(storedIndex) : '';
     return storedIndex == '0' ? '/companyProfile' : '/userProfile';
 });
 
 const nextStep = () => {
     const storedIndex = localStorage.getItem('selectedIndex');
-    if (storedIndex == '0') {
-        if (currentStep.value == 2) {
-            router.push(navigateTo.value);
-        } else {
-            if (currentStep.value < items.value.length - 1) {
-                currentStep.value++;
-            }
-        }
-    }
-    if (storedIndex == '1' || storedIndex == '2') {
-        if (currentStep.value == 1) {
-            router.push(navigateTo.value);
-        } else {
-            if (currentStep.value < items.value.length - 1) {
-                currentStep.value++;
-            }
-        }
+    if (canContinue.value) {
+        setTimeout(() => {
+            storedIndex == '0' ? currentStep.value < items.value.length - 1 ? currentStep.value++ : router.push(navigateTo.value) : currentStep.value < items.value.length - 1 ? currentStep.value++ : router.push(navigateTo.value);
+            hasSubmitted.value = false;
+            resetInputs();
+        }, 0);
     }
 };
 
+const resetInputs = () => {
+    fullName.value = '';
+    inputGange.value = '';
+    inputGange1.value = '';
+    inputGange2.value = '';
+    inputGange3.value = '';
+    inputValues.value = [''];
+};
+
 const prevStep = () => {
-    if (currentStep.value < items.value.length - 0) {
-        currentStep.value--;
-    }
+    currentStep.value < items.value.length - 0 ? currentStep.value-- : '';
+    currentStep.value == -1 ? router.push("/") : '';
 }
 
 const options = ref([
@@ -460,17 +498,11 @@ const containsAcshen3 = computed(() => {
 });
 
 watch(index, (newIndex) => {
-    if (newIndex == 1 || newIndex == 2) {
-        items.value = ['Personal Information', 'Email Verification'];
-    } else {
-        items.value = ['Personal Information', 'Email Verification', 'Job Preferences'];
-    }
+    newIndex == 1 || newIndex == 2 ? items.value = ['Personal Information', 'Email Verification'] : items.value = ['Personal Information', 'Email Verification', 'Job Preferences'];
 });
 
 onMounted(() => {
     const storedIndex = localStorage.getItem('selectedIndex');
-    if (storedIndex !== null) {
-        index.value = Number(storedIndex);
-    }
+    storedIndex !== null ? index.value = Number(storedIndex) : '';
 });
 </script>

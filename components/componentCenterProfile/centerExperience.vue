@@ -26,27 +26,27 @@
                                             <div class="position-relative w-100">
                                                 <label for="">Employment Type</label>
                                                 <select class="mt-2 rounded-3 p-2 border border-2 w-100"
-                                                    :class="['selectJobPreferences', { 'select-open': isOpen }]"
+                                                    :class="['selectJobPreferences', { 'selectOpen': isOpen }]"
                                                     @focus="isOpen = true" @blur="isOpen = false">
                                                     <option value="">content</option>
                                                     <option value="role1">content</option>
                                                     <option value="role2">content</option>
                                                 </select>
                                                 <div class="position-absolute arrow arrowOverflow"
-                                                    :class="{ 'select-open': isOpen }">
+                                                    :class="{ 'selectOpen': isOpen }">
                                                 </div>
                                             </div>
                                             <div class="position-relative w-100">
                                                 <label for="">Employment Type</label>
                                                 <select class="mt-2 rounded-3 p-2 border border-2 w-100"
-                                                    :class="['selectJobPreferences', { 'select-open': isOpen1 }]"
+                                                    :class="['selectJobPreferences', { 'selectOpen': isOpen1 }]"
                                                     @focus="isOpen1 = true" @blur="isOpen1 = false">
                                                     <option value="">content</option>
                                                     <option value="role1">content</option>
                                                     <option value="role2">content</option>
                                                 </select>
                                                 <div class="position-absolute arrow arrowOverflow"
-                                                    :class="{ 'select-open': isOpen1 }">
+                                                    :class="{ 'selectOpen': isOpen1 }">
                                                 </div>
                                             </div>
                                         </div>

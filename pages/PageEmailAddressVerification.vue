@@ -35,7 +35,6 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
 const inputValues = ref(['', '', '', '', '']);
 const inputClasses = ref(['borderColorNormal', 'borderColorNormal', 'borderColorNormal', 'borderColorNormal', 'borderColorNormal']);
 const hideJobPreferences = ref(false);

@@ -24,8 +24,8 @@ ul {
     text-decoration: none;
     background-color: $colorGrayButton;
     padding: 13px 25px;
-    pointer-events: none;
-    opacity: 0.5;
+    // pointer-events: none;
+    // opacity: 0.5;
 
     .spanContinue {
         color: $colorButton;
@@ -88,6 +88,28 @@ label {
     font-size: 12px;
 }
 
+.selectJobPreferences {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 30px;
+}
+
+.arrow {
+    background-image: url("/assets/images/ArrowDopdown.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.5s;
+    width: 24px;
+    height: 24px;
+}
+
+.selectOpen.arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -132,7 +154,7 @@ body nav div div ul li div .divMessaging {
     right: -60px;
     max-height: 0;
     min-width: 380px;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 body nav div div ul li div .divMessaging .hieght100 {
@@ -140,7 +162,7 @@ body nav div div ul li div .divMessaging .hieght100 {
 }
 
 body nav div div ul li div .divMessaging.activeMessaging {
-    max-height: 650px;
+    max-height: 450px;
     min-width: 380px;
 }
 
@@ -149,7 +171,7 @@ body nav div div ul li div div div div .imgMessages {
     top: 13px;
 }
 
-body nav div div .listNoneMobile li div div div ul .listStyleHoverMessages::before {
+body nav div div ul li div div div ul .listStyleHoverMessages::before {
     content: "";
     position: absolute;
     width: 0;
@@ -159,9 +181,13 @@ body nav div div .listNoneMobile li div div div ul .listStyleHoverMessages::befo
     transition: 0.7s;
 }
 
-body nav div div .listNoneMobile li div div div ul .listStyleHoverMessages:hover::before {
+body nav div div ul li div div div ul .listStyleHoverMessages:hover::before {
     width: 100%;
     background-color: $colorHoverMessages;
+}
+
+body nav div div ul li .imageWidth {
+    width: 100%;
 }
 
 // end navbar User Profile
@@ -256,6 +282,7 @@ body .divHayThere div .divHayPerint div div .rowGapColumn ul .active {
 body .divChildSelect ul li div .lineLast {
     height: 10px;
     background-color: $colorLast;
+    transition: 0.5s;
 }
 
 body .divChildSelect ul li div .lineLast.activeEmail {
@@ -531,8 +558,6 @@ body div div div div div .linkPhotoForm {
 
 .navigation {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
 }
 
 // end page create data user
@@ -564,28 +589,6 @@ body div div ul li .rowChild {
             color: $colorGreen !important;
         }
     }
-}
-
-body .divChildSelect div form div div .selectJobPreferences {
-    -webkit-appearance: none;
-    appearance: none;
-    padding-right: 30px;
-}
-
-body .divChildSelect div form div div .arrow {
-    background-image: url("/assets/images/ArrowDopdown.png");
-    background-size: 24px;
-    background-repeat: no-repeat;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.5s;
-    width: 24px;
-    height: 24px;
-}
-
-body .divChildSelect div form div div .selectOpen.arrow {
-    transform: translateY(-50%) rotate(180deg);
 }
 
 body .paddingPageProfile div div div div div form div div div .customRadio input[type="radio"] {
@@ -751,6 +754,10 @@ body div div div div .modalContentSmoll {
 // start media
 @media (max-width: 990px) {
 
+    body nav div div ul li .imageWidth {
+        width: 60%;
+    }
+
     body .divChildSelect {
         padding-top: 80px !important;
     }
@@ -803,6 +810,11 @@ body div div div div .modalContentSmoll {
                 border: 0 solid $colorBorder;
             }
         }
+    }
+
+    body nav div div ul li div .divMessaging {
+        left: -40px;
+        min-width: 100%;
     }
 }
 
