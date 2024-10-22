@@ -112,7 +112,7 @@
                         </router-link>
                         <router-link to="/pageCreateDataCompany">
                             <img src="/assets/images/imageCompanyNavbar.png" alt=""
-                                v-if="currentRoute == '/companyProfile'">
+                                v-if="currentRoute == '/companyProfile' || currentRoute == '/pageCreateDataCompany'">
                         </router-link>
                     </li>
                 </ul>

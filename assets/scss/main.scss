@@ -110,6 +110,22 @@ label {
     transform: translateY(-50%) rotate(180deg);
 }
 
+.listColor {
+    color: $colorNavbarChildProfile;
+}
+
+.arrowOverflow {
+    top: 55px !important;
+}
+
+.arrowOverflowDate {
+    top: 23px !important;
+}
+
+.arrowOverflowCompany {
+    top: 61px !important;
+}
+
 // end other
 // start navbar Sign Up
 body .indexNavbarPerint {
@@ -143,10 +159,6 @@ body nav div div div div .imageSearch {
 
 body nav div div div div .imageSearchOverflow {
     left: 23px;
-}
-
-body div .divBorderBottomProfileText div div div div div form div div .arrowOverflow {
-    top: 55px !important;
 }
 
 body nav div div ul li div .divMessaging {
@@ -547,16 +559,20 @@ body div div div div div .linkPhotoForm {
     left: 395px !important;
 }
 
-.step-header {
+body div div div div div .linkPhotoFormCompany {
+    left: 396px !important;
+}
+
+body .divChildSelect ul li .stepHeader {
     transition: background-color 0.3s;
 }
 
-.step-header.completed {
+body .divChildSelect ul li .stepHeader.completed {
     background-color: #28a745;
     color: white;
 }
 
-.navigation {
+body .divChildSelect .navigation {
     margin-top: 20px;
 }
 
@@ -664,10 +680,6 @@ body div div div div ul li .divList {
     background-color: $colorList;
 }
 
-body div div div div div .listColor {
-    color: $colorNavbarChildProfile;
-}
-
 body .divPaddingSideBarCompany {
     padding: 7% 0;
 }
@@ -741,7 +753,7 @@ body div div div div form div div div div div div .custom-radio input[type="radi
 }
 
 body div div div div form div div .textAreaPlaceholderOverflow::placeholder {
-    left: 37% !important;
+    left: 32% !important;
 }
 
 body div div div div .modalContentSmoll {
@@ -749,6 +761,31 @@ body div div div div .modalContentSmoll {
     width: 80%;
     margin-left: 70px !important;
 }
+
+body div div div div form div .divUploadFile {
+    background-color: $colorBorder;
+    border: 1px solid $colorNavbarChildProfile;
+}
+
+body div div div div form div ul li div div div .divOpload::before,
+body div div div div form div ul li div div div .divOpload {
+    height: 6px;
+    top: -1.2px;
+}
+
+.divOploadDonwload {
+    background-color: $colorGreen;
+    height: 6px !important;
+    border-radius: 10px;
+}
+
+// body div div div div form div ul li div div div .divOpload::before {
+//     content: "";
+//     position: absolute;
+//     // width: 55%;
+//     background-color: $colorGreen;
+//     border-radius: 10px;
+// }
 
 // end company profile
 // start media

@@ -35,23 +35,19 @@
                                                 <div class="position-absolute arrow arrowOverflow"
                                                     :class="{ 'selectOpen': isOpen }">
                                                 </div>
+                                                <span>Helper Place holder</span>
                                             </div>
-                                            <div class="position-relative w-100">
-                                                <label for="">Employment Type</label>
-                                                <select class="mt-2 rounded-3 p-2 border border-2 w-100"
-                                                    :class="['selectJobPreferences', { 'selectOpen': isOpen1 }]"
-                                                    @focus="isOpen1 = true" @blur="isOpen1 = false">
-                                                    <option value="">content</option>
-                                                    <option value="role1">content</option>
-                                                    <option value="role2">content</option>
-                                                </select>
-                                                <div class="position-absolute arrow arrowOverflow"
-                                                    :class="{ 'selectOpen': isOpen1 }">
+                                            <div class="w-100">
+                                                <div class="d-flex justify-content-between">
+                                                    <label for="">your role</label>
+                                                    <label for="" class="fs-5 text-danger">*</label>
                                                 </div>
+                                                <input type="text" placeholder="Content" class="w-100 rounded-3 p-2 border">
+                                                <span>Helper Place holder</span>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-column gap-1">
-                                            <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex justify-content-between">
                                                 <label for="">Location</label>
                                                 <label for="" class="fs-5 text-danger mt-2">*</label>
                                             </div>
@@ -68,51 +64,74 @@
                                         </div>
                                         <div class="d-flex gap-1">
                                             <input type="checkbox" id="currently" class="inputBox">
-                                            <label for="currently" class="sizeLabel">I am currently working in this
-                                                role</label>
+                                            <label for="currently">I am currently working in this role</label>
                                         </div>
                                     </div>
-                                    <div class="d-flex w-100 gap-4">
+                                    <div class="mt-4 d-flex w-100 gap-4">
                                         <div class="w-100">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <label for="">Start Date</label>
                                                 <label for="" class="fs-5 text-danger mt-2">*</label>
                                             </div>
                                             <div class="d-flex w-100 gap-3">
-                                                <div class="d-flex flex-column gap-1 w-100">
-                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                        <option value="">Year</option>
-                                                        <option value="">Year</option>
+                                                <div class="position-relative w-100">
+                                                    <select class="rounded-3 p-2 border border-2 w-100"
+                                                        :class="['selectJobPreferences', { 'selectOpen': isOpen1 }]"
+                                                        @focus="isOpen1 = true" @blur="isOpen1 = false">
+                                                        <option value="">year</option>
+                                                        <option value="role1">year</option>
+                                                        <option value="role2">year</option>
                                                     </select>
+                                                    <div class="position-absolute arrow arrowOverflowDate"
+                                                        :class="{ 'selectOpen': isOpen1 }">
+                                                    </div>
                                                     <span>Helper Place holder</span>
                                                 </div>
-                                                <div class="d-flex flex-column gap-1 w-100">
-                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                        <option value="">Month</option>
-                                                        <option value="">Month</option>
+                                                <div class="position-relative w-100">
+                                                    <select class="rounded-3 p-2 border border-2 w-100"
+                                                        :class="['selectJobPreferences', { 'selectOpen': isOpen2 }]"
+                                                        @focus="isOpen2 = true" @blur="isOpen2 = false">
+                                                        <option value="">month</option>
+                                                        <option value="role1">month</option>
+                                                        <option value="role2">month</option>
                                                     </select>
+                                                    <div class="position-absolute arrow arrowOverflowDate"
+                                                        :class="{ 'selectOpen': isOpen2 }">
+                                                    </div>
                                                     <span>Helper Place holder</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="w-100">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <label for="">End Date</label>
+                                                <label for="">end Date</label>
                                                 <label for="" class="fs-5 text-danger mt-2">*</label>
                                             </div>
                                             <div class="d-flex w-100 gap-3">
-                                                <div class="d-flex flex-column gap-1 w-100">
-                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                        <option value="">Year</option>
-                                                        <option value="">Year</option>
+                                                <div class="position-relative w-100">
+                                                    <select class="rounded-3 p-2 border border-2 w-100"
+                                                        :class="['selectJobPreferences', { 'selectOpen': isOpen3 }]"
+                                                        @focus="isOpen3 = true" @blur="isOpen3 = false">
+                                                        <option value="">year</option>
+                                                        <option value="role1">year</option>
+                                                        <option value="role2">year</option>
                                                     </select>
+                                                    <div class="position-absolute arrow arrowOverflowDate"
+                                                        :class="{ 'selectOpen': isOpen3 }">
+                                                    </div>
                                                     <span>Helper Place holder</span>
                                                 </div>
-                                                <div class="d-flex flex-column gap-1 w-100">
-                                                    <select name="" id="" class="w-100 rounded-3 p-2 border">
-                                                        <option value="">Month</option>
-                                                        <option value="">Month</option>
+                                                <div class="position-relative w-100">
+                                                    <select class="rounded-3 p-2 border border-2 w-100"
+                                                        :class="['selectJobPreferences', { 'selectOpen': isOpen4 }]"
+                                                        @focus="isOpen4 = true" @blur="isOpen4 = false">
+                                                        <option value="">month</option>
+                                                        <option value="role1">month</option>
+                                                        <option value="role2">month</option>
                                                     </select>
+                                                    <div class="position-absolute arrow arrowOverflowDate"
+                                                        :class="{ 'selectOpen': isOpen4 }">
+                                                    </div>
                                                     <span>Helper Place holder</span>
                                                 </div>
                                             </div>
@@ -186,6 +205,9 @@
 import { ref, nextTick } from 'vue';
 const isOpen = ref(false);
 const isOpen1 = ref(false);
+const isOpen2 = ref(false);
+const isOpen3 = ref(false);
+const isOpen4 = ref(false);
 const showModal = ref(false);
 let deleteKey = ref(null);
 

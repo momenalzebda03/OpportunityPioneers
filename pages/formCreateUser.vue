@@ -4,7 +4,7 @@
             <img src="/assets/images/arrowBack.png" @click="prevStep" :disabled="currentStep == 0" class="imageMouse">
             <ul class=" row p-0 mt-4 gap-3 gap-md-0">
                 <li class="col step" v-for="(item, index) in items" :key="index">
-                    <div class="step-header d-flex flex-column gap-2">
+                    <div class="stepHeader d-flex flex-column gap-2">
                         <span class="text-nowrap spanLast" :class="{ active: currentStep == index }">
                             {{ item }}
                         </span>

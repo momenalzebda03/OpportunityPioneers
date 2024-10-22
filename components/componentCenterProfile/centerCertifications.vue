@@ -100,7 +100,7 @@
                                                 <label for="" class="fs-5 text-danger mt-2">*</label>
                                             </div>
                                             <div class="position-relative">
-                                                <textarea name="" id="" cols="100" rows="4"
+                                                <textarea name="" id="" cols="100" rows="5"
                                                     class="textArea rounded-3 p-2 border">
                                             </textarea>
                                                 <ul
@@ -117,8 +117,7 @@
                                                     <li class="imageMouse" @click="triggerFileInput">
                                                         <img src="/assets/images/File.png" alt="" class="w-100">
                                                     </li>
-                                                    <input type="file" ref="fileInput" class="d-none"
-                                                        @change="handleFileChange" />
+                                                    <input type="file" ref="fileInput" class="d-none" />
                                                 </ul>
                                             </div>
                                             <span>Helper Place holder</span>
@@ -196,6 +195,7 @@
 <script setup>
 import { ref, nextTick } from "vue";
 
+const fileInput = ref(null);
 const showModal = ref(false);
 const arrayExerience = ref([
     { key: 0, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
@@ -205,6 +205,10 @@ const arrayExerience = ref([
     { key: 4, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
     { key: 5, imgSoptify: 'http://localhost:3000/_nuxt/assets/images/googleLogo.png', title: 'google', spanTitle: 'google ux pyphssicess', span: 'Aug 2019 - Dec 2020' },
 ])
+
+const triggerFileInput = () => {
+    fileInput.value.click();
+};
 
 const openModal = () => {
     showModal.value = true;

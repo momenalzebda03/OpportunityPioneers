@@ -1,8 +1,8 @@
 <template>
   <ComponentNavbarSignUp
-    v-if="currentRoute != '/userProfile' || currentRoute !== '/pageCreateDataUser' || currentRoute !== '/companyProfile'" />
+    v-if="currentRoute != '/userProfile' || currentRoute !== '/pageCreateDataUser' || currentRoute !== '/companyProfile' || currentRoute !== '/pageCreateDataCompany'" />
   <ComponentNavbarUserProfile
-    v-if="currentRoute == '/userProfile' || currentRoute == '/pageCreateDataUser' || currentRoute == '/companyProfile'" />
+    v-if="currentRoute == '/userProfile' || currentRoute == '/pageCreateDataUser' || currentRoute == '/companyProfile' || currentRoute == '/pageCreateDataCompany'" />
   <NuxtPage />
 </template>
 

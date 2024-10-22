@@ -1,14 +1,9 @@
 <template>
-    <div>
-        <h1>welcome</h1>
-    </div>
-</template>
-<!-- <template>
     <div class="paddingPageProfile">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 mt-2">
-                    <router-link to="/userProfile" class="text-decoration-none fw-bold colorProfile text-nowrap">back to
+                    <router-link to="/companyProfile" class="text-decoration-none fw-bold colorProfile text-nowrap">back to
                         profile</router-link>
                 </div>
                 <div class="col-lg-10">
@@ -30,9 +25,6 @@
                     </div>
                     <PersonalInfomation v-if="listCard[0].active" />
                     <password v-if="listCard[1].active" />
-                    <centerCertifical v-if="listCard[2].active" />
-                    <Exeriences v-if="listCard[3].active" />
-                    <Certifications v-if="listCard[4].active" />
                 </div>
             </div>
         </div>
@@ -41,18 +33,12 @@
 
 <script setup>
 import { ref } from 'vue';
-import PersonalInfomation from "../components/componentsForm/PersonalInfomation";
+import PersonalInfomation from "../components/componentsFormCompany/PersonalInfomation";
 import password from "../components/componentsForm/password";
-import centerCertifical from "../components/componentsForm/ConnectedProfiles.vue";
-import Exeriences from "../components/componentsForm/Experiences";
-import Certifications from "../components/componentsForm/Certifications";
 
 const listCard = ref([
     { textLink: 'personal infomation', active: true },
     { textLink: 'password', active: false },
-    { textLink: 'connected profiles', active: false },
-    { textLink: 'experiences', active: false },
-    { textLink: 'cerifications', active: false }
 ]);
 
 const setActive = (index) => {
@@ -60,4 +46,4 @@ const setActive = (index) => {
         item.active = (i === index);
     });
 };
-</script> -->
+</script>
